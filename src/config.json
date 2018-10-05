@@ -1,0 +1,27 @@
+{
+  "appname": "mlipia",
+  "database": {
+    "fullpath:": "mongodb://admin:mlipiaadmin2018@ds123513.mlab.com:23513/mlipia",
+    "path": "ds123513.mlab.com:23513/mlipia",
+    "user": "admin",
+    "pass": "mlipiaadmin2018"
+  },
+  "log": {
+    "verbose": "true",
+    "toFile": "false",
+    "files": {
+      "debug": "./logs/debug.log",
+      "error": "./logs/error.log",
+      "full": "./logs/full.log",
+      "info": "./logs/info.log",
+      "silly": "./logs/silly.log",
+      "verbose": "./logs/verbose.log",
+      "warn": "./logs/warn.log"
+    }
+  },
+  "device": "mlipiadevice",
+  "user": "mlipiauser",
+  "server": {
+    "address": "http://mlipia.herokuapp.com"
+  }
+}

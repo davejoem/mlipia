@@ -1,7 +1,8 @@
 import { Mlipia } from 'server'
-import { Ev, MlipiaEvent } from 'interfaces/interfaces'
+import { Ev, MlipiaEvent, ILender } from 'interfaces/interfaces'
 import { Lender } from 'models/models'
 import { Error as MError } from 'mongoose'
+import { MongoError } from 'mongodb';
 
 export class LendersEvents implements MlipiaEvent {
   public events: Ev[]
@@ -10,7 +11,7 @@ export class LendersEvents implements MlipiaEvent {
    *
    */
   constructor(
-    private asd: Mlipia
+    private mlipia: Mlipia
     , public purview: string
     , autolist?: boolean
   ) {
@@ -21,15 +22,20 @@ export class LendersEvents implements MlipiaEvent {
     })
   }
 
-  private add(): any[] {
-
-    return new Array()
+  private add(data: ILender): Promise<Lender> {
+    return new Promise((resolve, reject) => {
+      new Lender(this.mlipia).create(data).then((lender: Lender) => {
+        resolve(lender)
+      }).catch((err: MongoError) => {
+        reject(err)
+      })
+    })
   }
 
   private listen(): void {
     this.events.forEach(ev => {
       let event: string = this.purview + ':' + ev.name
-      this.asd.socket.on(event, ev.func)
+      this.mlipia.socket.on(event, ev.func)
     })
   }
 
@@ -50,14 +56,14 @@ export class LendersEvents implements MlipiaEvent {
     return Promise.resolve(() => {
       this.events.forEach(ev => {
         let event: string = this.purview + ':' + ev.name
-        this.asd.socket.off(event)
+        this.mlipia.socket.off(event)
       })
     })
   }
 
   private list(cb: Function): Promise<Lender[]> {
     return new Promise((res, rej) => {
-      this.asd.models.Lender.find()
+      this.mlipia.models.Lender.find()
         .exec()
         .then((lenders: Lender[]) => {
           this.end(res, cb, lenders)

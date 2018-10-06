@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const models_1 = require("models/models");
 class LendersEvents {
     /**
      *
      */
-    constructor(asd, purview, autolist) {
-        this.asd = asd;
+    constructor(mlipia, purview, autolist) {
+        this.mlipia = mlipia;
         this.purview = purview;
         this.events = [];
         this.register().then(() => {
@@ -13,13 +14,19 @@ class LendersEvents {
                 this.listen();
         });
     }
-    add() {
-        return new Array();
+    add(data) {
+        return new Promise((resolve, reject) => {
+            new models_1.Lender(this.mlipia).create(data).then((lender) => {
+                resolve(lender);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
     }
     listen() {
         this.events.forEach(ev => {
             let event = this.purview + ':' + ev.name;
-            this.asd.socket.on(event, ev.func);
+            this.mlipia.socket.on(event, ev.func);
         });
     }
     register() {
@@ -38,13 +45,13 @@ class LendersEvents {
         return Promise.resolve(() => {
             this.events.forEach(ev => {
                 let event = this.purview + ':' + ev.name;
-                this.asd.socket.off(event);
+                this.mlipia.socket.off(event);
             });
         });
     }
     list(cb) {
         return new Promise((res, rej) => {
-            this.asd.models.Lender.find()
+            this.mlipia.models.Lender.find()
                 .exec()
                 .then((lenders) => {
                 this.end(res, cb, lenders);

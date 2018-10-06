@@ -1,6 +1,7 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Schema } from 'mongoose'
 import { Mlipia } from '../server'
+import { IGroup } from 'interfaces/group';
 
 export class Group extends Typegoose {
   private model: any
@@ -25,6 +26,19 @@ export class Group extends Typegoose {
   @prop()
   users: typeof Schema.Types.ObjectId[]
 
+  public create(data: IGroup): Promise<Group> {
+    return new Promise((resolve, reject) => {
+      let LenderInstance = new Group(this.mlipia).getModelForClass(Group)
+        , lenderModel = new LenderInstance({
+          name: data.name
+        })
+      lenderModel.save().then((lender: Group) => {
+        resolve(lender)
+      }).catch((err: any) => {
+        reject(err)
+      })
+    })
+  }
   public find(): any {
 
   }

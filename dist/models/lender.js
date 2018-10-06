@@ -17,12 +17,26 @@ class Lender extends typegoose_1.Typegoose {
     constructor(mlipia) {
         super();
         this.mlipia = mlipia;
-        this.model = this.createModel();
     }
-    createModel() {
-        this.getModelForClass(this);
+    fetchModel() {
+        return this.getModelForClass(this);
+    }
+    get model() {
+        return this.fetchModel();
     }
     find() {
+    }
+    create(data) {
+        return new Promise((resolve, reject) => {
+            let LenderInstance = new Lender(this.mlipia).getModelForClass(Lender), lenderModel = new LenderInstance({
+                name: data.name
+            });
+            lenderModel.save().then((lender) => {
+                resolve(lender);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
     }
 }
 __decorate([

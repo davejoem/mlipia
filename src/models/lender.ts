@@ -1,8 +1,8 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
+import { ILender } from 'interfaces/lender';
 
 export class Lender extends Typegoose {
-  private model: any
   private mlipia: Mlipia
   /**
    *
@@ -10,17 +10,34 @@ export class Lender extends Typegoose {
   constructor(mlipia: Mlipia) {
     super();
     this.mlipia = mlipia
-    this.model = this.createModel()
   }
-  
-  public createModel() {
-    this.getModelForClass(this)
+
+  public fetchModel(): ModelType<Lender> {
+    return this.getModelForClass(this)
+  }
+
+  get model() {
+    return this.fetchModel()
   }
 
   @prop()
   date?: Date
 
   public find(): any {
+  }
+
+  public create(data: ILender): Promise<Lender> {
+    return new Promise((resolve, reject) => {
+      let LenderInstance = new Lender(this.mlipia).getModelForClass(Lender)
+        , lenderModel = new LenderInstance({
+          name: data.name
+        })
+      lenderModel.save().then((lender: Lender) => {
+        resolve(lender)
+      }).catch((err: any) => {
+        reject(err)
+      })
+    })
   }
 
 }

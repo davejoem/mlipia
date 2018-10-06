@@ -1,5 +1,5 @@
 import { Mlipia } from 'server'
-import { Ev, MlipiaEvent } from 'interfaces/interfaces'
+import { Ev, MlipiaEvent, IUser, IClient } from 'interfaces/interfaces'
 import { User, Client } from 'models/models'
 import { Error as MError } from 'mongoose'
 import { resolve } from 'path';
@@ -19,6 +19,12 @@ export class ClientsEvents implements MlipiaEvent {
     this.register().then(() => {
       if (autolist == true)
         this.listen()
+    })
+  }
+
+  public add(): Promise<IClient> {
+    return new Promise((resolve, reject) => {
+
     })
   }
 

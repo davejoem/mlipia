@@ -19,6 +19,18 @@ class Group extends typegoose_1.Typegoose {
     createModel() {
         this.getModelForClass(this);
     }
+    create(data) {
+        return new Promise((resolve, reject) => {
+            let LenderInstance = new Group(this.mlipia).getModelForClass(Group), lenderModel = new LenderInstance({
+                name: data.name
+            });
+            lenderModel.save().then((lender) => {
+                resolve(lender);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
+    }
     find() {
     }
 }

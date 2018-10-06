@@ -13,6 +13,10 @@ class ClientsEvents {
                 this.listen();
         });
     }
+    add() {
+        return new Promise((resolve, reject) => {
+        });
+    }
     listen() {
         this.events.forEach(ev => {
             let event = this.purview + ':' + ev.name;

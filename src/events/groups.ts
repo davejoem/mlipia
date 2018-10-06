@@ -1,7 +1,8 @@
 import { Mlipia } from 'server'
-import { Ev, MlipiaEvent } from 'interfaces/interfaces'
+import { Ev, MlipiaEvent, IGroup } from 'interfaces/interfaces'
 import { Group } from 'models/models'
 import { Error as MError } from 'mongoose'
+import { MongoError } from 'mongodb';
 
 export class GroupsEvents implements MlipiaEvent {
   public events: Ev[]
@@ -10,7 +11,7 @@ export class GroupsEvents implements MlipiaEvent {
    *
    */
   constructor(
-    private asd: Mlipia
+    private mlipia: Mlipia
     , public purview: string
     , autolist?: boolean
   ) {
@@ -21,15 +22,20 @@ export class GroupsEvents implements MlipiaEvent {
     })
   }
 
-  private add(): any[] {
-
-    return new Array()
+  private add(data: IGroup): Promise<Group> {
+    return new Promise((resolve, reject) => {
+      new Group(this.mlipia).create(data).then((lender: Group) => {
+        resolve(lender)
+      }).catch((err: MongoError) => {
+        reject(err)
+      })
+    })
   }
 
   private listen(): void {
     this.events.forEach(ev => {
       let event: string = this.purview + ':' + ev.name
-      this.asd.socket.on(event, ev.func)
+      this.mlipia.socket.on(event, ev.func)
     })
   }
 
@@ -50,14 +56,14 @@ export class GroupsEvents implements MlipiaEvent {
     return Promise.resolve(() => {
       this.events.forEach(ev => {
         let event: string = this.purview + ':' + ev.name
-        this.asd.socket.off(event)
+        this.mlipia.socket.off(event)
       })
     })
   }
 
   private list(cb: Function): Promise<Group[]> {
     return new Promise((res, rej) => {
-      this.asd.models.Group.find()
+      this.mlipia.models.Group.find()
         .exec()
         .then((groups: Group[]) => {
           this.end(res, cb, groups)

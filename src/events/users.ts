@@ -1,6 +1,6 @@
 import { Mlipia } from 'server'
 import { Ev, MlipiaEvent } from 'interfaces/interfaces'
-import { User } from 'models/models'
+import { User } from '../models/models'
 import { Error as MError } from 'mongoose'
 
 export class UsersEvents implements MlipiaEvent {

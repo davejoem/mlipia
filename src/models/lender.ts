@@ -1,6 +1,6 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
-import { ILender } from 'interfaces/lender';
+import { ILender } from '../interfaces/lender';
 
 export class Lender extends Typegoose {
   private mlipia: Mlipia

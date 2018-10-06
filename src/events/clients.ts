@@ -1,6 +1,6 @@
 import { Mlipia } from 'server'
 import { Ev, MlipiaEvent, IUser, IClient } from 'interfaces/interfaces'
-import { User, Client } from 'models/models'
+import { User, Client } from '../models/models'
 import { Error as MError } from 'mongoose'
 import { resolve } from 'path';
 

@@ -1,6 +1,6 @@
 import { Mlipia } from 'server'
 import { Ev, MlipiaEvent, ILender } from 'interfaces/interfaces'
-import { Lender } from 'models/models'
+import { Lender } from '../models/models'
 import { Error as MError } from 'mongoose'
 import { MongoError } from 'mongodb';
 

@@ -1,6 +1,6 @@
 import { Mlipia } from 'server'
 import { Ev, MlipiaEvent, IGroup } from 'interfaces/interfaces'
-import { Group } from 'models/models'
+import { Group } from '../models/models'
 import { Error as MError } from 'mongoose'
 import { MongoError } from 'mongodb';
 

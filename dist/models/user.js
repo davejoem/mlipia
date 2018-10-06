@@ -14,18 +14,53 @@ class User extends typegoose_1.Typegoose {
     constructor(mlipia) {
         super();
         this.mlipia = mlipia;
-        this.model = this.createModel();
     }
-    createModel() {
-        this.getModelForClass(this);
+    fetchModel() {
+        return this.getModelForClass(this);
+    }
+    get model() {
+        return this.fetchModel();
+    }
+    create(data) {
+        return new Promise((resolve, reject) => {
+            let UserInstance = new User(this.mlipia).getModelForClass(User), userModel = new UserInstance({
+                username: data.username,
+                name: data.name,
+                groups: data.groups
+            });
+            userModel.save().then((user) => {
+                resolve(user);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
     }
     find() {
+        return new Promise((resolve, reject) => {
+            this.model.find().then((users) => {
+                resolve(users);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
     }
 }
 __decorate([
     typegoose_1.prop(),
     __metadata("design:type", String)
+], User.prototype, "username", void 0);
+__decorate([
+    typegoose_1.prop(),
+    __metadata("design:type", String)
 ], User.prototype, "name", void 0);
+__decorate([
+    typegoose_1.prop(),
+    __metadata("design:type", Array)
+], User.prototype, "groups", void 0);
+__decorate([
+    typegoose_1.prop(),
+    __metadata("design:type", String)
+], User.prototype, "role", void 0);
 exports.User = User;
 // UserModel is a regular Mongoose Model with correct types
 // (async () => {

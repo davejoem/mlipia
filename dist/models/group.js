@@ -24,8 +24,16 @@ class Group extends typegoose_1.Typegoose {
 }
 __decorate([
     typegoose_1.prop(),
-    __metadata("design:type", Date)
-], Group.prototype, "date", void 0);
+    __metadata("design:type", String)
+], Group.prototype, "name", void 0);
+__decorate([
+    typegoose_1.prop(),
+    __metadata("design:type", Array)
+], Group.prototype, "rights", void 0);
+__decorate([
+    typegoose_1.prop(),
+    __metadata("design:type", Array)
+], Group.prototype, "users", void 0);
 exports.Group = Group;
 // UserModel is a regular Mongoose Model with correct types
 // (async () => {

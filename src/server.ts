@@ -14,6 +14,7 @@ import * as cookieParser from "cookie-parser"
 import * as express from "express"
 import * as mongoose from 'mongoose'
 import * as mongodb from 'mongodb'
+import opn = require('opn')
 import * as io from 'socket.io'
 import { Logger, LoggerInstance, transports } from 'winston'
 
@@ -57,6 +58,7 @@ export class Mlipia {
     db: mongodb.MongoClient
     path: string
   }
+  public env: string
   public events: {
     client: ClientsEvents
     , group: GroupsEvents
@@ -73,7 +75,7 @@ export class Mlipia {
     , User: User
   }
   public mongoose: mongoose.Mongoose
-
+  public opn: any
   public port: number
   public routes: {
     admin: AdminRoutes
@@ -92,6 +94,7 @@ export class Mlipia {
 
   constructor() {
     this.config = {}
+    this.env = process.env.NODE_ENV || 'dev';
     this.events = {
       client: null
       , group: null
@@ -105,6 +108,7 @@ export class Mlipia {
       , Lender: null
       , User: null
     }
+    this.opn = opn
     this.routes = {
       admin: null
       , client: null
@@ -173,7 +177,8 @@ export class Mlipia {
           resolve()
         }).catch((err: Error) => {
           process.stdout.write(`Couldn't connect database.\n`)
-          reject(err)
+          // reject(err)
+          resolve()
         }
         )
       }, 3000)
@@ -296,8 +301,9 @@ export class Mlipia {
                       mlipia.setUpRoutes().then((mlipia: Mlipia) => {
                         mlipia.startServer(mlipia.port)
                           .then(info => {
-                            process.stderr.write(`\nServer started\n${info}`)
+                            process.stderr.write(`\nServer started\n${info.message}`)
                             // mlipia.logger.log({ log: `\nServer started\n${info}`, info: info })
+
                           })
                           .catch(err => {
                             // mlipia.logger.log({ log: `\nCouldn't start server\n`, error: err })
@@ -439,7 +445,20 @@ export class Mlipia {
     return new Promise((resolve, reject) => {
       this.server.listen(port ? port : this.port, () => {
         let addr = this.server.address()
-        resolve(`\n${this.config.appname} running on ${addr.address}:${addr.port}\n`)
+        console.log(process.env.NODE_ENV)
+        let opened = false
+        if (process.env.NODE_ENV == 'dev' && !opened) {
+          process.stdout.write(`Opening browser at http://localhost:${addr.port}`)
+          opened = true
+          opn(`http://localhost:${addr.port}`)
+            .then((success: any) => {
+
+            })
+            .catch((err: any) => {
+              process.stdout.write(`Couldn't launch browser`)
+            })
+        }
+        resolve({ message: `\n${this.config.appname} running on ${addr.address}:${addr.port}\n`, address: addr })
       }).on('error', (err: Error) => {
         reject(err)
       })

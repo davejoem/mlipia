@@ -1,9 +1,11 @@
-import { Route, Rt } from "interfaces/route"
-import { Ev, MlipiaEvent } from "interfaces/event"
+import { Ev, MlipiaEvent } from "./event"
+import { Route, Rt } from "./route"
+import { IUser } from './user'
 
 export {
-  MlipiaEvent
-  , Ev
+  Ev
+  , IUser
+  , MlipiaEvent
   , Route
   , Rt
 }

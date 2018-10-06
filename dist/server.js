@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const compression = require("compression");
 const express = require("express");
 const mongoose = require("mongoose");
+const opn = require("opn");
 const io = require("socket.io");
 const winston_1 = require("winston");
 const events_1 = require("./events/events");
@@ -17,6 +18,7 @@ const routes_1 = require("./routes/routes");
 class Mlipia {
     constructor() {
         this.config = {};
+        this.env = process.env.NODE_ENV || 'dev';
         this.events = {
             client: null,
             group: null,
@@ -30,6 +32,7 @@ class Mlipia {
             Lender: null,
             User: null
         };
+        this.opn = opn;
         this.routes = {
             admin: null,
             client: null,
@@ -96,7 +99,8 @@ class Mlipia {
                     resolve();
                 }).catch((err) => {
                     process.stdout.write(`Couldn't connect database.\n`);
-                    reject(err);
+                    // reject(err)
+                    resolve();
                 });
             }, 3000);
         });
@@ -193,7 +197,7 @@ class Mlipia {
                 mlipia.setUpLogger().then(() => mlipia.checkOnlineStatus().then(stat => mlipia.getDbPath(stat).then(database_pat => mlipia.connectToDatabase(database_pat).then(() => mlipia.modelDatabase().then(() => mlipia.setUpServer().then((mlipia) => mlipia.connectSockets().then(() => mlipia.setUpRoutes().then((mlipia) => {
                     mlipia.startServer(mlipia.port)
                         .then(info => {
-                        process.stderr.write(`\nServer started\n${info}`);
+                        process.stderr.write(`\nServer started\n${info.message}`);
                         // mlipia.logger.log({ log: `\nServer started\n${info}`, info: info })
                     })
                         .catch(err => {
@@ -322,7 +326,19 @@ class Mlipia {
         return new Promise((resolve, reject) => {
             this.server.listen(port ? port : this.port, () => {
                 let addr = this.server.address();
-                resolve(`\n${this.config.appname} running on ${addr.address}:${addr.port}\n`);
+                console.log(process.env.NODE_ENV);
+                let opened = false;
+                if (process.env.NODE_ENV == 'dev' && !opened) {
+                    process.stdout.write(`Opening browser at http://localhost:${addr.port}`);
+                    opened = true;
+                    opn(`http://localhost:${addr.port}`)
+                        .then((success) => {
+                    })
+                        .catch((err) => {
+                        process.stdout.write(`Couldn't launch browser`);
+                    });
+                }
+                resolve({ message: `\n${this.config.appname} running on ${addr.address}:${addr.port}\n`, address: addr });
             }).on('error', (err) => {
                 reject(err);
             });

@@ -1,4 +1,5 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
+import { Schema } from 'mongoose'
 import { Mlipia } from '../server'
 
 export class Group extends Typegoose {
@@ -10,13 +11,19 @@ export class Group extends Typegoose {
     this.mlipia = mlipia
     this.model = this.createModel()
   }
-  
+
   public createModel() {
     this.getModelForClass(this)
   }
 
   @prop()
-  date?: Date;
+  name: string
+
+  @prop()
+  rights: string[]
+
+  @prop()
+  users: typeof Schema.Types.ObjectId[]
 
   public find(): any {
 

@@ -29,7 +29,7 @@ let clean = () => { return del(["./dist/**"]) }
 
 let copy = gulp.parallel(
   () => {
-    return gulp.src('./src/views/**/*.*', { "base": "src" }).pipe(gulp.dest('./dist/views/'))
+    return gulp.src('./src/views/**/*.*', { "base": "src" }).pipe(gulp.dest('./dist/'))
   }
   , () => {
     return gulp.src('config.json', { "base": "." }).pipe(gulp.dest('./dist/'))

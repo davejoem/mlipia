@@ -403,11 +403,11 @@ export class Mlipia {
       // app.set('view engine','ejs')
       // app.engine('html', ejs.renderFile);
       // this.app.use(winston('dev'))
-      this.app.use(this.helmet({
-        referrerPolicy: true
-        , noCache: true
-        // , hpkp: true
-      }))
+      // this.app.use(this.helmet({
+      //   referrerPolicy: true
+      //   , noCache: true
+      //   // , hpkp: true
+      // }))
       // parse application/json
       this.app.use(bodyParser.json())
       // parse application/x-www-form-urlencoded

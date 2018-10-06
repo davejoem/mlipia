@@ -12,6 +12,7 @@ import * as bodyParser from "body-parser"
 import * as compression from "compression"
 import * as cookieParser from "cookie-parser"
 import * as express from "express"
+import * as helmet from 'helmet'
 import * as mongoose from 'mongoose'
 import * as mongodb from 'mongodb'
 import opn = require('opn')
@@ -66,6 +67,7 @@ export class Mlipia {
     , user: UsersEvents
   }
   public express: express.Express
+  public helmet: helmet.Helmet
   public ip: string
   public logger: LoggerInstance
   public models: {
@@ -102,6 +104,7 @@ export class Mlipia {
       , user: null
     }
     this.logger = null
+    this.helmet = helmet
     this.models = {
       Client: null
       , Group: null
@@ -400,6 +403,11 @@ export class Mlipia {
       // app.set('view engine','ejs')
       // app.engine('html', ejs.renderFile);
       // this.app.use(winston('dev'))
+      this.app.use(this.helmet({
+        referrerPolicy: true
+        , noCache: true
+        // , hpkp: true
+      }))
       // parse application/json
       this.app.use(bodyParser.json())
       // parse application/x-www-form-urlencoded

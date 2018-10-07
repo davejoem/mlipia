@@ -5,7 +5,7 @@
   "main": "./dist/server.js",
   "scripts": {
     "build": "gulp scripts",
-    "build-admin": "ng build --prod -pr -op ./dist/views/admin/ -dop",
+    "build-admin": "cd ./src/views/admin && npm run build",
     "compile": "node node_modules/typescript/lib/tsc.js -p ./tsconfig.json",
     "build2": "npm run compile",
     "rerun": "npm run compile && npm start",

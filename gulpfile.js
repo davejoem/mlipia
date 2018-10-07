@@ -29,10 +29,14 @@ let clean = () => { return del(["./dist/**"]) }
 
 let copy = gulp.parallel(
   () => {
-    return gulp.src('./src/views/**/*.*', { "base": "src" }).pipe(gulp.dest('./dist/'))
+    return gulp.src('./src/views/admin/dist/*.*', { "base": "src" }).pipe(gulp.dest('./dist/views/admin/'))
+  }
+  , 
+  () => {
+    return gulp.src('./src/views/client/*.*', { "base": "src" }).pipe(gulp.dest('./dist/views/client/'))
   }
   , () => {
-    return gulp.src('config.json', { "base": "." }).pipe(gulp.dest('./dist/'))
+    return gulp.src('./src/config.json', { "base": "src" }).pipe(gulp.dest('./dist/'))
   }
 )
 

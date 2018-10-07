@@ -1,7 +1,6 @@
-import { Rt, Route } from 'interfaces/interfaces'
-import { Mlipia } from 'server'
+import { Rt, Route } from '../interfaces/interfaces'
+import { Mlipia } from '../server'
 import { Request, Response } from 'express'
-import { resolve } from 'path'
 
 export class GeneralRoutes implements Route {
   // private asd: Asd

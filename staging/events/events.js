@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const e=require("./clients");exports.ClientsEvents=e.ClientsEvents;const s=require("./groups");exports.GroupsEvents=s.GroupsEvents;const r=require("./lenders");exports.LendersEvents=r.LendersEvents;const t=require("./users");exports.UsersEvents=t.UsersEvents;

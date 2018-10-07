@@ -1,8 +1,9 @@
-import { Mlipia } from 'server'
-import { Ev, MlipiaEvent, ILender } from 'interfaces/interfaces'
+import { Mlipia } from '../server'
+import { Ev, MlipiaEvent, ILender } from '../interfaces/interfaces'
 import { Lender } from '../models/models'
 import { Error as MError } from 'mongoose'
 import { MongoError } from 'mongodb';
+import { Promise } from 'es6-promise'
 
 export class LendersEvents implements MlipiaEvent {
   public events: Ev[]

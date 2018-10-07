@@ -1,4 +1,4 @@
-import { Mlipia } from 'server'
+import { Mlipia } from '../server'
 
 export interface Route {
   mlipia: Mlipia

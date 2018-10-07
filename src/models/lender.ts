@@ -1,6 +1,7 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
 import { ILender } from '../interfaces/lender';
+import { Promise } from 'es6-promise'
 
 export class Lender extends Typegoose {
   private mlipia: Mlipia

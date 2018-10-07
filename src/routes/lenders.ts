@@ -1,8 +1,8 @@
-import { Rt, Route } from 'interfaces/interfaces'
-import { Lender } from 'models/models'
-import { Mlipia } from "server"
+import { Rt, Route } from '../interfaces/interfaces'
+import { Lender } from '../models/models'
+import { Mlipia } from "../server"
 import { Request, Response } from 'express'
-import { resolve } from 'path'
+import { Promise } from 'es6-promise'
 
 export class LendersRoutes implements Route {
   // private asd: Asd

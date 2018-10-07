@@ -1,5 +1,6 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
+import { Promise } from 'es6-promise'
 
 export class Client extends Typegoose {
   private model: any
@@ -10,11 +11,11 @@ export class Client extends Typegoose {
     this.mlipia = mlipia
     this.model = this.createModel()
   }
-  
+
   public createModel() {
     this.getModelForClass(this)
   }
-  
+
   @prop()
   date?: Date
   @prop()

@@ -1,7 +1,7 @@
-import { Rt, Route } from 'interfaces/interfaces'
-import { Mlipia } from "server"
+import { Rt, Route } from '../interfaces/interfaces'
+import { Mlipia } from "../server"
 import { Request, Response } from 'express'
-import { resolve } from 'path'
+import { Promise } from 'es6-promise'
 
 export class UsersRoutes implements Route {
   // private asd: Asd

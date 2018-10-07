@@ -2,6 +2,7 @@ import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Schema } from 'mongoose'
 import { Mlipia } from '../server'
 import { IGroup } from '../interfaces/group';
+import { Promise } from 'es6-promise'
 
 export class Group extends Typegoose {
   private model: any

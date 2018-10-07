@@ -2,13 +2,13 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
-import { Wims } from '../server';
+import { Mlipia } from '../src/server';
 
 chai.use(chaiHttp);
-const app
+let app
 const expect = chai.expect;
 
-Wims.launch().then()
+Mlipia.launch().then()
 describe('baseRoute', () => {
 
   it('should be json', () => {

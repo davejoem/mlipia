@@ -3,7 +3,6 @@ import { Ev, MlipiaEvent, IUser, IClient } from '../interfaces/interfaces'
 import { User, Client } from '../models/models'
 import { Error as MError } from 'mongoose'
 import { resolve } from 'path';
-import { Promise } from 'es6-promise'
 
 export class ClientsEvents implements MlipiaEvent {
   public events: Ev[]

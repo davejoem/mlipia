@@ -1,6 +1,5 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
-import { Promise } from 'es6-promise'
 
 export class Client extends Typegoose {
   private model: any

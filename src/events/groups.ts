@@ -2,8 +2,7 @@ import { Mlipia } from '../server'
 import { Ev, MlipiaEvent, IGroup } from '../interfaces/interfaces'
 import { Group } from '../models/models'
 import { Error as MError } from 'mongoose'
-import { MongoError } from 'mongodb';
-import { Promise } from 'es6-promise'
+import { MongoError } from 'mongodb'
 
 export class GroupsEvents implements MlipiaEvent {
   public events: Ev[]

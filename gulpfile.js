@@ -34,14 +34,14 @@ const del = require('del')
   }
   , clean = () => { return del(["./dist/**"]) }
   , copy = gulp.parallel(
-    () => {
+    function copyAdmin() {
       return gulp.src('./src/views/admin/dist/**/*.*', { "base": "./src/views/admin/dist/" }).pipe(gulp.dest('./dist/views/admin/'))
     }
     ,
-    () => {
+    function copyClient() {
       return gulp.src('./src/views/client/**/*.*', { "base": "./src/views/client" }).pipe(gulp.dest('./dist/views/client/'))
     }
-    , () => {
+    , function copyConfig() {
       return gulp.src('./src/config.json', { "base": "src" }).pipe(gulp.dest('./dist/'))
     }
   )

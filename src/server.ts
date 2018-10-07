@@ -11,7 +11,6 @@ import * as args from 'argparse'
 import * as bodyParser from "body-parser"
 import * as compression from "compression"
 import * as cookieParser from "cookie-parser"
-import { Promise } from 'es6-promise'
 import * as express from "express"
 import * as helmet from 'helmet'
 import * as mongoose from 'mongoose'

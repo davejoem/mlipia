@@ -1,10 +1,10 @@
 {
   "appname": "mlipia",
   "database": {
-    "fullpath:": "mongodb://admin:mlipiaadmin2018@ds123513.mlab.com:23513/mlipia",
-    "path": "ds123513.mlab.com:23513/mlipia",
+    "fullpath:": "mongodb://admin:adminmlipia2018@ds123513.mlab.com:23513/mlipia",
+    "path": "ds123513.mlab.com:23513",
     "user": "admin",
-    "pass": "mlipiaadmin2018"
+    "pass": "adminmlipia2018"
   },
   "log": {
     "verbose": "true",

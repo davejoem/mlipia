@@ -2,7 +2,6 @@ import { Mlipia } from '../server'
 import { Ev, MlipiaEvent } from '../interfaces/interfaces'
 import { User } from '../models/models'
 import { Error as MError } from 'mongoose'
-import { Promise } from 'es6-promise'
 
 export class UsersEvents implements MlipiaEvent {
   public events: Ev[]

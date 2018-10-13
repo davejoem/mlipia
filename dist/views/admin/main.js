@@ -288,10 +288,6 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./views/admin/admin.module": [
-		"./src/app/views/admin/admin.module.ts",
-		"views-admin-admin-module"
-	],
 	"./views/base/base.module": [
 		"./src/app/views/base/base.module.ts",
 		"common",
@@ -683,6 +679,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./views/manager/manager.component */ "./src/app/views/manager/manager.component.ts");
 /* harmony import */ var _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./views/approver/approver.component */ "./src/app/views/approver/approver.component.ts");
 /* harmony import */ var _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./views/agent/agent.component */ "./src/app/views/agent/agent.component.ts");
+/* harmony import */ var _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./views/admin/accounts.component */ "./src/app/views/admin/accounts.component.ts");
+/* harmony import */ var _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/admin/transactions.component */ "./src/app/views/admin/transactions.component.ts");
+/* harmony import */ var _views_admin_users_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/admin/users.component */ "./src/app/views/admin/users.component.ts");
+/* harmony import */ var _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/admin/clients.component */ "./src/app/views/admin/clients.component.ts");
+/* harmony import */ var _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/admin/groups.component */ "./src/app/views/admin/groups.component.ts");
+/* harmony import */ var _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./views/admin/lenders.component */ "./src/app/views/admin/lenders.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -717,6 +719,12 @@ var APP_CONTAINERS = [
 // Import routing module
 
 // Import 3rd party components
+
+
+
+
+
+
 
 
 
@@ -760,10 +768,16 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]
             ].concat(APP_CONTAINERS, [
+                _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_25__["AccountsComponent"],
                 _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"],
                 _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_22__["ManagerComponent"],
                 _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_23__["ApproverComponent"],
                 _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_24__["AgentComponent"],
+                _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_28__["ClientsComponent"],
+                _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_29__["GroupsComponent"],
+                _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_30__["LendersComponent"],
+                _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_26__["TransactionsComponent"],
+                _views_admin_users_component__WEBPACK_IMPORTED_MODULE_27__["UsersComponent"],
                 _views_error_404_component__WEBPACK_IMPORTED_MODULE_9__["P404Component"],
                 _views_error_500_component__WEBPACK_IMPORTED_MODULE_10__["P500Component"],
                 _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"],
@@ -802,6 +816,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/manager/manager.component */ "./src/app/views/manager/manager.component.ts");
 /* harmony import */ var _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/approver/approver.component */ "./src/app/views/approver/approver.component.ts");
 /* harmony import */ var _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/agent/agent.component */ "./src/app/views/agent/agent.component.ts");
+/* harmony import */ var _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/admin/accounts.component */ "./src/app/views/admin/accounts.component.ts");
+/* harmony import */ var _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/admin/transactions.component */ "./src/app/views/admin/transactions.component.ts");
+/* harmony import */ var _views_admin_users_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/admin/users.component */ "./src/app/views/admin/users.component.ts");
+/* harmony import */ var _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/admin/groups.component */ "./src/app/views/admin/groups.component.ts");
+/* harmony import */ var _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/admin/clients.component */ "./src/app/views/admin/clients.component.ts");
+/* harmony import */ var _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/admin/lenders.component */ "./src/app/views/admin/lenders.component.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -820,41 +841,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
+
 var routes = [
-    {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full',
-    },
-    {
-        path: 'admin',
-        component: _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_7__["AdminComponent"],
-        data: {
-            title: 'Admin'
-        },
-        children: [
-            {
-                path: 'admin',
-                loadChildren: './views/admin/admin.module#AdminModule'
-            },
-            {}
-        ]
-    },
-    {
-        path: 'manager',
-        component: _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_8__["ManagerComponent"],
-        data: { title: 'Manager' }
-    },
-    {
-        path: 'approver',
-        component: _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"],
-        data: { title: "Approver" }
-    },
-    {
-        path: 'agent',
-        component: _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_10__["AgentComponent"],
-        data: { title: "Agent" }
-    },
     {
         path: '404',
         component: _views_error_404_component__WEBPACK_IMPORTED_MODULE_3__["P404Component"],
@@ -867,13 +861,6 @@ var routes = [
         component: _views_error_500_component__WEBPACK_IMPORTED_MODULE_4__["P500Component"],
         data: {
             title: 'Page 500'
-        }
-    },
-    {
-        path: '',
-        component: _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_5__["SigninComponent"],
-        data: {
-            title: 'Login'
         }
     },
     {
@@ -890,6 +877,126 @@ var routes = [
             title: 'Home'
         },
         children: [
+            {
+                path: 'admin',
+                component: _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_7__["AdminComponent"],
+                data: { title: 'Administrator', expectedRole: 'admin' },
+                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                children: [
+                    {
+                        path: 'accounts',
+                        component: _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__["AccountsComponent"],
+                        data: { title: 'Accounts', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'transactions',
+                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
+                        data: { title: 'Transactions', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'users',
+                        component: _views_admin_users_component__WEBPACK_IMPORTED_MODULE_13__["UsersComponent"],
+                        data: { title: 'Users', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'groups',
+                        component: _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_14__["GroupsComponent"],
+                        data: { title: 'Groups', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'clients',
+                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
+                        data: { title: 'Clients', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'lenders',
+                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
+                        data: { title: 'Lenders', expectedRole: 'admin' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    }
+                ]
+            },
+            {
+                path: 'manager',
+                component: _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_8__["ManagerComponent"],
+                data: { title: 'Manager', expectedRole: 'manager' },
+                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                children: [
+                    {
+                        path: 'accounts',
+                        component: _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__["AccountsComponent"],
+                        data: { title: 'Accounts', expectedRole: 'manager' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'transactions',
+                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
+                        data: { title: 'Transactions', expectedRole: 'manager' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'clients',
+                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
+                        data: { title: 'Clients', expectedRole: 'manager' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'lenders',
+                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
+                        data: { title: 'Lenders', expectedRole: 'manager' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    }
+                ]
+            },
+            {
+                path: 'approver',
+                component: _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"],
+                data: { title: 'Approver', expectedRole: 'approver' },
+                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                children: [
+                    {
+                        path: 'transactions',
+                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
+                        data: { title: 'Transactions', expectedRole: 'approver' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'clients',
+                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
+                        data: { title: 'Clients', expectedRole: 'approver' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    },
+                    {
+                        path: 'lenders',
+                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
+                        data: { title: 'Lenders', expectedRole: 'approver' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    }
+                ]
+            },
+            {
+                path: 'agent',
+                component: _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_10__["AgentComponent"],
+                data: { title: 'Agent', expectedRole: 'agent' },
+                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
+                children: [
+                    {
+                        path: 'clients',
+                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
+                        data: { title: 'Clients', expectedRole: 'agent' },
+                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
+                    }
+                ]
+            },
             {
                 path: 'base',
                 loadChildren: './views/base/base.module#BaseModule'
@@ -923,6 +1030,18 @@ var routes = [
                 loadChildren: './views/widgets/widgets.module#WidgetsModule'
             }
         ]
+    },
+    {
+        path: 'signin',
+        component: _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_5__["SigninComponent"],
+        data: {
+            title: 'Sign In'
+        }
+    },
+    {
+        path: '',
+        redirectTo: 'signin',
+        pathMatch: 'full',
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -1153,9 +1272,10 @@ var Storage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage.service */ "./src/app/storage.service.ts");
-/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.service */ "./src/app/api.service.ts");
-/* harmony import */ var _models_hybrid_message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./models/hybrid-message */ "./src/app/models/hybrid-message.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage.service */ "./src/app/storage.service.ts");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.service */ "./src/app/api.service.ts");
+/* harmony import */ var _models_hybrid_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./models/hybrid-message */ "./src/app/models/hybrid-message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1165,6 +1285,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1189,12 +1310,64 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  * If the `status` field is not `success`, then an error is detected and returned.
  */
 var User = /** @class */ (function () {
-    function User(api, storage) {
+    function User(api, router, storage) {
         this.api = api;
+        this.router = router;
         this.storage = storage;
         this.USER_KEY = 'user';
         this.USER_TOKEN = 'token';
+        this.redirectPath = '';
+        this._user = this.load();
     }
+    User.prototype.canActivate = function (route, state) {
+        var _this = this;
+        // this will be passed from the route config
+        // on the data property
+        route.url.map(function (url) { return url.path; }).forEach(function (part) {
+            _this.redirectPath += part;
+        });
+        var expectedRole = route.data.expectedRole;
+        // const token = localStorage.getItem('token')
+        // decode the token to get its payload
+        // const tokenPayload = decode(token)
+        if (this.hasAccess(state.url, expectedRole)) {
+            return true;
+        }
+        else {
+            this.router.navigateByUrl('/signin');
+            return false;
+        }
+    };
+    User.prototype.canActivateChild = function (route, state) {
+        return this.canActivate(route, state);
+    };
+    User.prototype.canLoad = function (route) {
+        // this will be passed from the route config
+        // on the data 
+        // Store the attempted URL for redirecting
+        this.redirectPath = route.path;
+        var expectedRole = route.data.expectedRole;
+        // const token = localStorage.getItem('token');
+        // decode the token to get its payload
+        // const tokenPayload = decode(token);
+        if (this.hasAccess(route.path, expectedRole)) {
+            return true;
+        }
+        else {
+            this.router.navigateByUrl('/signin');
+            return false;
+        }
+    };
+    User.prototype.hasAccess = function (url, role) {
+        if (this._user.role == role) {
+            return true;
+        }
+        // Store the attempted URL for redirecting
+        this.redirectPath = url;
+        // Navigate to the login page with extras
+        // this.router.navigate(['/signin'])
+        return false;
+    };
     /**
      * Send a POST request to our code generation endpoint with the data
      * the user entered on the form.
@@ -1213,7 +1386,7 @@ var User = /** @class */ (function () {
      * the user entered on the form.
      */
     User.prototype.signIn = function (details) {
-        return this.api.send(new _models_hybrid_message__WEBPACK_IMPORTED_MODULE_3__["HybridMessage"]('/auth/signin', 'auth:signin', 'post', details));
+        return this.api.send(new _models_hybrid_message__WEBPACK_IMPORTED_MODULE_4__["HybridMessage"]('/auth/signin', 'auth:signin', 'post', details));
     };
     /**
      * Sign the user out, which forgets the session
@@ -1227,6 +1400,7 @@ var User = /** @class */ (function () {
      */
     User.prototype._signedIn = function (user) {
         this._user = user;
+        return this.save(user);
     };
     User.prototype.save = function (user) {
         return this.storage.set(this.USER_KEY, user ? user : this._user);
@@ -1235,10 +1409,59 @@ var User = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_2__["Api"],
-            _storage_service__WEBPACK_IMPORTED_MODULE_1__["Storage"]])
+        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_3__["Api"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _storage_service__WEBPACK_IMPORTED_MODULE_2__["Storage"]])
     ], User);
     return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/accounts.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/views/admin/accounts.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/accounts.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/views/admin/accounts.component.ts ***!
+  \***************************************************/
+/*! exports provided: AccountsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountsComponent", function() { return AccountsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AccountsComponent = /** @class */ (function () {
+    function AccountsComponent() {
+    }
+    AccountsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./accounts.component.html */ "./src/app/views/admin/accounts.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], AccountsComponent);
+    return AccountsComponent;
 }());
 
 
@@ -1290,6 +1513,246 @@ var AdminComponent = /** @class */ (function () {
         })
     ], AdminComponent);
     return AdminComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/clients.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/views/admin/clients.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/clients.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/views/admin/clients.component.ts ***!
+  \**************************************************/
+/*! exports provided: ClientsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientsComponent", function() { return ClientsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ClientsComponent = /** @class */ (function () {
+    function ClientsComponent() {
+    }
+    ClientsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./clients.component.html */ "./src/app/views/admin/clients.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], ClientsComponent);
+    return ClientsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/groups.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/views/admin/groups.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/groups.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/views/admin/groups.component.ts ***!
+  \*************************************************/
+/*! exports provided: GroupsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupsComponent", function() { return GroupsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var GroupsComponent = /** @class */ (function () {
+    function GroupsComponent() {
+    }
+    GroupsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./groups.component.html */ "./src/app/views/admin/groups.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], GroupsComponent);
+    return GroupsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/lenders.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/views/admin/lenders.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/lenders.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/views/admin/lenders.component.ts ***!
+  \**************************************************/
+/*! exports provided: LendersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LendersComponent", function() { return LendersComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LendersComponent = /** @class */ (function () {
+    function LendersComponent() {
+    }
+    LendersComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./lenders.component.html */ "./src/app/views/admin/lenders.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], LendersComponent);
+    return LendersComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/transactions.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/views/admin/transactions.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/transactions.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/views/admin/transactions.component.ts ***!
+  \*******************************************************/
+/*! exports provided: TransactionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionsComponent", function() { return TransactionsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TransactionsComponent = /** @class */ (function () {
+    function TransactionsComponent() {
+    }
+    TransactionsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./transactions.component.html */ "./src/app/views/admin/transactions.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], TransactionsComponent);
+    return TransactionsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/admin/users.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/views/admin/users.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/admin/users.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/views/admin/users.component.ts ***!
+  \************************************************/
+/*! exports provided: UsersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersComponent", function() { return UsersComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UsersComponent = /** @class */ (function () {
+    function UsersComponent() {
+    }
+    UsersComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: __webpack_require__(/*! ./users.component.html */ "./src/app/views/admin/users.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], UsersComponent);
+    return UsersComponent;
 }());
 
 
@@ -1601,7 +2064,7 @@ var RegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 mx-auto\">\n          <div class=\"card-group\">\n            <div class=\"card p-4\">\n              <div class=\"card-body\">\n                <form (ngSubmit)=\"doSign()\">\n                  <h1>Sign In</h1>\n                  <p class=\"text-muted\">Sign In to your account</p>\n                  <div class=\"input-group mb-3\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                    </div>\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Username\" autocomplete=\"username\" required>\n                  </div>\n                  <div class=\"input-group mb-4\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                    </div>\n                    <input type=\"password\" class=\"form-control\" placeholder=\"Password\" autocomplete=\"current-password\"\n                      required>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"col-6\">\n                      <button type=\"submit\" class=\"btn btn-primary px-4\" (click)=\"doSign()\">Sign In</button>\n                    </div>\n                    <div class=\"col-6 text-right\">\n                      <button type=\"button\" class=\"btn btn-link px-0\">Forgot password?</button>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>"
+module.exports = "<div class=\"app-body\">\n  <main class=\"main d-flex align-items-center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 mx-auto\">\n          <div class=\"card-group\">\n            <div class=\"card p-4\">\n              <div class=\"card-body\">\n                <form [formGroup]=\"signIn\" (ngSubmit)=\"doSign()\">\n                  <h1>Sign In</h1>\n                  <p class=\"text-muted\">Sign In to your account</p>\n                  <div class=\"input-group mb-3\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-user\"></i></span>\n                    </div>\n                    <input type=\"text\" formControlName=\"username\" class=\"form-control\" placeholder=\"Username\"\n                      autocomplete=\"username\" required>\n                    <p class=\"danger info\" *ngIf=\"signInErrors.username.length\" text-center>{{ signInErrors.username }}</p>\n                  </div>\n                  <div class=\"input-group mb-4\">\n                    <div class=\"input-group-prepend\">\n                      <span class=\"input-group-text\"><i class=\"icon-lock\"></i></span>\n                    </div>\n                    <input type=\"password\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\"\n                      autocomplete=\"current-password\" required>\n                    <p class=\"danger info\" text-center *ngIf=\"signInErrors.password.length\">{{ signInErrors.password }}</p>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"col-6\">\n                      <button type=\"submit\" [disabled]=\"!signIn.valid\" class=\"btn btn-primary px-4\">Sign In</button>\n                    </div>\n                    <div class=\"col-6 text-right\">\n                      <button type=\"button\" class=\"btn btn-link px-0\">Forgot password?</button>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </main>\n</div>"
 
 /***/ }),
 
@@ -1689,16 +2152,16 @@ var SigninComponent = /** @class */ (function () {
             _this.user._signedIn(user);
             switch (user.role) {
                 case 'admin':
-                    _this.router.navigateByUrl('/admin');
+                    _this.router.navigateByUrl('/home/admin');
                     break;
                 case 'manager':
-                    _this.router.navigateByUrl('/manager');
+                    _this.router.navigateByUrl('/home/manager');
                     break;
                 case 'approver':
-                    _this.router.navigateByUrl('/approver');
+                    _this.router.navigateByUrl('/home/approver');
                     break;
                 case 'agent':
-                    _this.router.navigateByUrl('/agent');
+                    _this.router.navigateByUrl('/home/agent');
                     break;
             }
         }, function (err) {

@@ -73,16 +73,16 @@ export class SigninComponent implements OnInit, OnDestroy {
         this.user._signedIn(user)
         switch (user.role) {
           case 'admin':
-            this.router.navigateByUrl('/admin')
+            this.router.navigateByUrl('/home/admin')
             break
           case 'manager':
-            this.router.navigateByUrl('/manager')
+            this.router.navigateByUrl('/home/manager')
             break
           case 'approver':
-            this.router.navigateByUrl('/approver')
+            this.router.navigateByUrl('/home/approver')
             break
           case 'agent':
-            this.router.navigateByUrl('/agent')
+            this.router.navigateByUrl('/home/agent')
             break
         }
       },

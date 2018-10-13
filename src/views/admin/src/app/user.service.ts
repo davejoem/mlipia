@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot } from '@angular/router'
 import { Storage as Store } from './storage.service'
 import { Api } from './api.service'
 import { HybridMessage } from './models/hybrid-message'
@@ -26,16 +27,69 @@ import { IUser } from './interfaces/interfaces'
 @Injectable({
   providedIn: 'root'
 })
-export class User {
+export class User implements CanActivate, CanActivateChild, CanLoad {
   private USER_KEY: string = 'user'
   private USER_TOKEN: string = 'token'
   public _user: IUser
+  private redirectPath: string = ''
 
   constructor(
     public api: Api
+    , public router: Router
     , public storage: Store
-  ) { }
+  ) {
+    this._user = this.load()
+  }
 
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    // this will be passed from the route config
+    // on the data property
+    route.url.map(url => { return url.path }).forEach(part => {
+      this.redirectPath += part
+    })
+    const expectedRole = route.data.expectedRole
+    // const token = localStorage.getItem('token')
+    // decode the token to get its payload
+    // const tokenPayload = decode(token)
+    if (this.hasAccess(state.url, expectedRole)) { return true; }
+    else {
+      this.router.navigateByUrl('/signin');
+      return false;
+    }
+  }
+
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.canActivate(route, state);
+  }
+
+  canLoad(route: Route): boolean {
+    // this will be passed from the route config
+    // on the data 
+    // Store the attempted URL for redirecting
+    this.redirectPath = route.path
+    const expectedRole = route.data.expectedRole
+    // const token = localStorage.getItem('token');
+    // decode the token to get its payload
+    // const tokenPayload = decode(token);
+
+    if (this.hasAccess(route.path, expectedRole)) { return true; }
+    else {
+      this.router.navigateByUrl('/signin');
+      return false;
+    }
+
+  }
+
+  hasAccess(url: string, role: string): boolean {
+    if (this._user.role == role) { return true; }
+
+    // Store the attempted URL for redirecting
+    this.redirectPath = url
+
+    // Navigate to the login page with extras
+    // this.router.navigate(['/signin'])
+    return false;
+  }
 
   /**
    * Send a POST request to our code generation endpoint with the data
@@ -73,6 +127,7 @@ export class User {
    */
   _signedIn(user: IUser) {
     this._user = user;
+    return this.save(user)
   }
 
   save(user?: IUser) {

@@ -6,7 +6,7 @@ import { AgentComponent } from './agent.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'agent',
     component: AgentComponent,
     data: {
       title: 'Agent'

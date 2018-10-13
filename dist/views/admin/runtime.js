@@ -61,7 +61,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","views-base-base-module":"views-base-base-module","views-notifications-notifications-module":"views-notifications-notifications-module","views-theme-theme-module":"views-theme-theme-module","views-admin-admin-module":"views-admin-admin-module","views-buttons-buttons-module":"views-buttons-buttons-module","views-chartjs-chartjs-module":"views-chartjs-chartjs-module","views-dashboard-dashboard-module~views-widgets-widgets-module":"views-dashboard-dashboard-module~views-widgets-widgets-module","views-dashboard-dashboard-module":"views-dashboard-dashboard-module","views-widgets-widgets-module":"views-widgets-widgets-module","views-icons-icons-module":"views-icons-icons-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","views-base-base-module":"views-base-base-module","views-notifications-notifications-module":"views-notifications-notifications-module","views-theme-theme-module":"views-theme-theme-module","views-buttons-buttons-module":"views-buttons-buttons-module","views-chartjs-chartjs-module":"views-chartjs-chartjs-module","views-dashboard-dashboard-module~views-widgets-widgets-module":"views-dashboard-dashboard-module~views-widgets-widgets-module","views-dashboard-dashboard-module":"views-dashboard-dashboard-module","views-widgets-widgets-module":"views-widgets-widgets-module","views-icons-icons-module":"views-icons-icons-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

@@ -8,7 +8,7 @@ import { ManagerComponent } from './manager.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'manager',
     component: ManagerComponent,
     data: {
       title: 'Administrator'

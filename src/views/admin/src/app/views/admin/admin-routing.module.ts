@@ -11,7 +11,6 @@ import { UsersComponent } from './users.component'
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent,
     data: {
       title: 'Administrator'
     },

@@ -51,6 +51,12 @@ import { AdminComponent } from './views/admin/admin.component';
 import { ManagerComponent } from './views/manager/manager.component';
 import { ApproverComponent } from './views/approver/approver.component';
 import { AgentComponent } from './views/agent/agent.component';
+import { AccountsComponent } from './views/admin/accounts.component';
+import { TransactionsComponent } from './views/admin/transactions.component';
+import { UsersComponent } from './views/admin/users.component';
+import { ClientsComponent } from './views/admin/clients.component';
+import { GroupsComponent } from './views/admin/groups.component';
+import { LendersComponent } from './views/admin/lenders.component';
 
 export function providers() {
   return [
@@ -85,10 +91,16 @@ export function providers() {
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
+    AccountsComponent,
     AdminComponent,
     ManagerComponent,
     ApproverComponent,
     AgentComponent,
+    ClientsComponent,
+    GroupsComponent,
+    LendersComponent,
+    TransactionsComponent,
+    UsersComponent,
     P404Component,
     P500Component,
     SigninComponent,

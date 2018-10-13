@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { CommonModule } from '@angular/common'
 
-import { AgentComponent } from './agent.component';
 import { AgentRoutingModule } from './agent-routing.module';
+
+import { ClientsComponent } from '../admin/clients.component'
+import { UsersComponent } from '../admin/users.component'
 
 @NgModule({
   imports: [
-    AgentRoutingModule,
-    AgentComponent
+    CommonModule,
+    AgentRoutingModule
   ],
-  declarations: [AgentComponent]
+  declarations: [
+    , ClientsComponent
+    , UsersComponent
+  ]
 })
 export class AgentModule { }

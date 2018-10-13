@@ -9,7 +9,7 @@ import { TransactionsComponent } from '../admin/transactions.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'approver',
     component: ApproverComponent,
     data: {
       title: 'Approver'

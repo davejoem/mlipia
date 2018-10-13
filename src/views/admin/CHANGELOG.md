@@ -1,65 +1,81 @@
-## v2.1.5
-- update: `@coreui/coreui` to [`2.0.12`](https://github.com/coreui/coreui/releases) fixes some IE11 and `rtl` issues
-- update: `@babel/cli` to `7.1.2`
-- update: `@babel/core` to `7.1.2`
-- update: `eslint to `5.6.1`
-- update: `foreach-cli` to `1.8.1`
- 
-## v2.1.4
-- feat(basic-forms): add missing `date-input` 
-- update: `@coreui/coreui` to `2.0.11` fixes some IE11 and `rtl` issues
-- chore: update `babel-eslint` to `10.0.1`
-- chore: update `stylelint` to `9.6.0`
+## [angular](./README.md) version `changelog`
 
-## v2.1.3
-- fix(sidebar.pug): split icons/flags `li.nav-item`
-- update: `@coreui/coreui` to `2.0.9`
-- update: `flag-icon-css` to `3.2.0`
-- update: `@babel/cli` to `7.1.0`
-- update: `@babel/core` to `7.1.0`
-- update: `@babel/preset-env` to `7.1.0`
-- update: `eslint` to `5.6.0`
-- update: `js-beautify` to `1.8.6`
-- update: `stylelint-scss` to `3.3.1`
+###### `v2.0.0`
+- fix(dropdowns): dropup misplaced temp fix
+- chore: update `@coreui/icons` to `0.3.0`
+- refactor(coreui-icons): move to `@coreui/icons v0.3.0`
+- update: `@angular/*` to `6.1.6`
+- update: `angular-devkit/build-angular` to `0.7.5`
+- update: `@angular/cli` to `6.1.5`
+- update: `rxjs` to `6.3.0`
+- update: `rxjs-compat` to `6.3.0`
+- update: `@types/node` to `10.9.4`
+- update: `jasmine-core` to `3.2.1`
+- update: `karma-coverage-istanbul-reporter` to `2.0.2`
+- update: `karma-jasmine-html-reporter` to `1.3.1`
 
-## v2.1.2
-- Update: `@coreui/coreui` to `2.0.6`
-- Update: `bootstrap` to `4.1.3`
-- Update: `popper.js` to `1.14.4`
-- Update: `@babel/cli` to `^7.0.0`
-- Update: `@babel/core` to `^7.0.0`
-- Update: `@babel/plugin-proposal-object-rest-spread` to `^7.0.0`
-- Update: `@babel/preset-env` to `^7.0.0`
-- Update: `autoprefixer` to `^9.1.5`
-- Update: `babel-eslint` to `^9.0.0`
-- Update: `browser-sync` to `^2.24.7`
-- Update: `clean-css-cli` to `^4.2.1`
-- Update: `copyfiles` to `^2.1.0`
-- Update: `cross-env` to `^5.2.0`
-- Update: `eslint` to `^5.5.0`
-- Update: `eslint-plugin-compat` to `^2.5.1`
-- Update: `node-sass` to `^4.9.3`
-- Update: `nodemon` to `^1.18.4`
-- Update: `postcss-cli` to `^6.0.0`
-- Update: `shelljs` to `^0.8.2`
-- Update: `stylelint` to `^9.5.0`
-- Update: `stylelint-order` to `^1.0.0`
-- Update: `stylelint-scss` to `^3.3.0`
+###### `v2.0.0-rc.4`
+- fix(forms): validation classes example closes #95  
+- fix(forms): card-header-actions example
+- fix(forms): autocomplete
+- fix(login): form, autocomplete
+- fix(register): form, autocomplete
+- update: `@types/node` to `10.7.0`",`
+- update: `codelyzer` to `4.4.4`
+- update: `karma-jasmine-html-reporter` to `1.3.0`
+- update: `typescript` to `2.9.2`
 
+###### `v2.0.0-rc.3`
+- fix(carousels): move to `loremflickr` image placeholders
+- refactor: code cleanup
+- tests: fix minimal testing
+- update: `@angular/*` to `6.1.2`
+- update: `@angular/cli` to `6.1.3`
+- update: `@angular-devkit/build-angular` to `0.7.3`
+- update: `ngx-perfect-scrollbar` to `6.3.0`
+- update: `rxjs` to `6.2.2`
+- update: `rxjs-compat` to `6.2.2`
+- update: `@types/node` to `10.5.8`
+- update: `codelyzer` to `4.4.3`
+- update: `jasmine-core` to `3.2.0`
+- update: `karma` to `3.0.0`
+- update: `protractor": "5.4.0`
+- update: `ts-node` to `7.0.1`
+- update: `tslint` to `5.11.0`
 
-## v2.1.1
-- Update: @coreui/coreui to 2.0.3
-- Update: @babel/cli to 7.0.0-beta.53
-- Update: @babel/core to 7.0.0-beta.53
-- Update: @babel/plugin-proposal-object-rest-spread to 7.0.0-beta.53
-- Update: @babel/preset-env to 7.0.0-beta.53
-- Update: babel-eslint to 8.2.6
-- Update: bootstrap to 4.1.2
-- Update: eslint-plugin-compat to 2.5.0
-- Update: nodemon to 1.18.1                                     
+###### `v2.0.0-rc.2`
+- update: @angular/animations to 6.0.9
+- update: @angular/common to 6.0.9
+- update: @angular/compiler to 6.0.9
+- update: @angular/core to 6.0.9
+- update: @angular/forms to 6.0.9
+- update: @angular/http to 6.0.9
+- update: @angular/platform-browser to 6.0.9
+- update: @angular/platform-browser-dynamic to 6.0.9
+- update: @angular/router to 6.0.9
+- update: @coreui/coreui to 2.0.4
+- update: @coreui/icons to 0.3.0
+- update: bootstrap to 4.1.2
+- update: codelyzer to 4.4.2
+- update: karma-jasmine-html-reporter to 1.2.0
 
-## v2.1.0
-- **Feat: Add pug support**
-- Update: @coreui/coreui-icons to 0.3.0
-- Update: @coreui/coreui to 2.0.3
-- Update: perfect-scrollbar to 1.4.0
+###### `v2.0.0-rc.1`
+- chore: dependencies update
+
+###### `v1.0.10`
+- update: ngx-bootstrap to `2.0.2`
+- update: dependencies
+
+###### `v1.0.9`
+- update: bootstrap to `v4.0.0`
+- update: dependencies
+
+###### `v1.0.8`
+- update: bootstrap to `4.0.0-beta.3`
+- update: ngx-bootstrap to `2.0.0-rc.0`
+- fix(forms): duplicate `select` ids, toggleCollapse
+- fix(dashboard): btnRadio
+- refactor: `input-group-addon` to new `4.0.0-beta.3` classes
+- feature: some Bootstrap4 components added
+- feat: mobile sidebar link click closes the sidebar
+- update: dependencies

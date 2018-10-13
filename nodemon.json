@@ -1,0 +1,15 @@
+{
+    "verbose": true,
+    "ignore": [
+        "*.test.js",
+        "node_modules/*",
+        "src/views/admin/node_modules/*",
+        "*.html",
+        "*.css",
+        "*.scss",
+        "*.json",
+        "*.jpg",
+        "*.jpeg",
+        "*.png"
+    ]
+}

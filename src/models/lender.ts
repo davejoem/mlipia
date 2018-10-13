@@ -7,7 +7,7 @@ export class Lender extends Typegoose {
   /**
    *
    */
-  constructor(mlipia: Mlipia) {
+  constructor(mlipia?: Mlipia) {
     super();
     this.mlipia = mlipia
   }
@@ -42,12 +42,4 @@ export class Lender extends Typegoose {
 
 }
 
-// UserModel is a regular Mongoose Model with correct types
-// (async () => {
-//   const u = new LenderModel({ date: new Date(Date.now()) });
-//   await u.save();
-//   const user = await LenderModel.findOne();
-
-//   // prints { _id: 59218f686409d670a97e53e0, name: 'JohnDoe', __v: 0 }
-//   console.log(user);
-// })();
+export const LenderModel: ModelType<Lender> = new Lender().getModelForClass(Lender)

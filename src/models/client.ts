@@ -1,18 +1,21 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
+import { Model } from 'mongoose';
 
 export class Client extends Typegoose {
-  private model: any
   private mlipia: Mlipia
 
-  constructor(mlipia: Mlipia) {
+  constructor(mlipia?: Mlipia) {
     super()
     this.mlipia = mlipia
-    this.model = this.createModel()
   }
 
-  public createModel() {
-    this.getModelForClass(this)
+  public fetchModel(): ModelType<Client> {
+    return this.getModelForClass(this)
+  }
+
+  get model() {
+    return this.fetchModel()
   }
 
   @prop()
@@ -30,12 +33,4 @@ export class Client extends Typegoose {
 
 }
 
-// UserModel is a regular Mongoose Model with correct types
-// (async () => {
-//   const u = new AppointmentModel({ date: new Date(Date.now()) });
-//   await u.save();
-//   const user = await AppointmentModel.findOne();
-
-//   // prints { _id: 59218f686409d670a97e53e0, name: 'JohnDoe', __v: 0 }
-//   console.log(user);
-// })();
+export const ClientModel: ModelType<Client> = new Client().getModelForClass(Client)

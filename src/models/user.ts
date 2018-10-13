@@ -6,7 +6,7 @@ import { IUser } from '../interfaces/user'
 export class User extends Typegoose {
   private mlipia: Mlipia
 
-  constructor(mlipia: Mlipia) {
+  constructor(mlipia?: Mlipia) {
     super();
     this.mlipia = mlipia
   }
@@ -60,12 +60,4 @@ export class User extends Typegoose {
 
 }
 
-// UserModel is a regular Mongoose Model with correct types
-// (async () => {
-//   const u = new AppointmentModel({ date: new Date(Date.now()) });
-//   await u.save();
-//   const user = await AppointmentModel.findOne();
-
-//   // prints { _id: 59218f686409d670a97e53e0, name: 'JohnDoe', __v: 0 }
-//   console.log(user);
-// })();
+export const UserModel: ModelType<User> = new User().getModelForClass(User)

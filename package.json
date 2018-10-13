@@ -1,7 +1,7 @@
 {
-  "name": "appoinment-ease",
+  "name": "mlipia",
   "version": "0.0.1",
-  "description": "Server for appoinment-ease app. An online platform to make appoinments on Android devices.",
+  "description": "Server for mlipia.",
   "main": "./dist/server.js",
   "scripts": {
     "build": "gulp scripts",
@@ -23,7 +23,7 @@
   ],
   "author": "Dave Joe M <davejoem@live.com>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/davejoem/appoinment-ease#readme",
+  "homepage": "https://bitbucket.org/davejoem/mlipia#readme",
   "devDependencies": {
     "@types/argparse": "^1.0.33",
     "@types/bcrypt-nodejs": "^0.0.30",

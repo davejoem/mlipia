@@ -17,11 +17,12 @@ import * as mongoose from 'mongoose'
 import * as mongodb from 'mongodb'
 import opn = require('opn')
 import * as io from 'socket.io'
+import { ModelType } from 'typegoose'
 import { Logger, LoggerInstance, transports } from 'winston'
 
 import { ClientsEvents, GroupsEvents, LendersEvents, UsersEvents } from './events/events'
-import { Client, Group, User, Lender } from './models/models'
-import { AdminRoutes, ClientRoutes, ClientsRoutes, GeneralRoutes, GroupsRoutes, LendersRoutes, UsersRoutes } from './routes/routes'
+import { Account, AccountModel, Client, ClientModel, Group, GroupModel, Lender, LenderModel, Transaction, TransactionModel, User, UserModel } from './models/models'
+import { AccountsRoutes, AdminRoutes, AuthRoutes, ClientRoutes, ClientsRoutes, GeneralRoutes, GroupsRoutes, LendersRoutes, TransactionsRoutes, UsersRoutes } from './routes/routes'
 
 interface Config {
 
@@ -71,21 +72,26 @@ export class Mlipia {
   public ip: string
   public logger: LoggerInstance
   public models: {
-    Client: Client
-    , Group: Group
-    , Lender: Lender
-    , User: User
+    Account: ModelType<Account>
+    Client: ModelType<Client>
+    , Group: ModelType<Group>
+    , Lender: ModelType<Lender>
+    , Transaction: ModelType<Transaction>
+    , User: ModelType<User>
   }
   public mongoose: mongoose.Mongoose
   public opn: any
   public port: number
   public routes: {
+    accounts: AccountsRoutes
     admin: AdminRoutes
+    auth: AuthRoutes
     clients: ClientsRoutes
     client: ClientRoutes
     general: GeneralRoutes
     groups: GroupsRoutes
     lenders: LendersRoutes
+    transactions: TransactionsRoutes
     users: UsersRoutes
   }
   public server: any
@@ -106,19 +112,24 @@ export class Mlipia {
     this.logger = null
     this.helmet = helmet
     this.models = {
-      Client: null
+      Account: null
+      , Client: null
       , Group: null
       , Lender: null
+      , Transaction: null
       , User: null
     }
     this.opn = opn
     this.routes = {
-      admin: null
+      accounts: null
+      , admin: null
+      , auth: null
       , client: null
       , clients: null
       , groups: null
       , lenders: null
       , general: null
+      , transactions: null
       , users: null
     }
     this.status = {
@@ -207,10 +218,12 @@ export class Mlipia {
         ? this.database.path += process.env.OPENSHIFT_MONGODB_DB_PORT
         : this.database.path += "27017"
       this.database.path += `/${this.config.appname}`
-      status == true
-        ? resolve(`${prefix}${this.config.database.user}:${this.config.database.pass}@${this.config.database.path}/${this.config.appname}`)
-        // ? resolve(`${prefix}${this.config.database.path}/${this.config.appname}`)
-        : resolve(`${prefix}${this.database.path}`)
+      process.env.NODE_ENV == 'dev'
+        ? resolve(`${prefix}${this.database.path}`)
+        : status == true
+          ? resolve(`${prefix}${this.config.database.user}:${this.config.database.pass}@${this.config.database.path}/${this.config.appname}`)
+          // ? resolve(`${prefix}${this.config.database.path}/${this.config.appname}`)
+          : resolve(`${prefix}${this.database.path}`)
     })
   }
 
@@ -331,10 +344,12 @@ export class Mlipia {
   private modelDatabase(): Promise<any> {
     return Promise.resolve(() => {
       this.models = {
-        Client: new Client(this)
-        , Group: new Group(this)
-        , Lender: new Lender(this)
-        , User: new User(this)
+        Account: new Account(this).fetchModel() || AccountModel
+        , Client: new Client(this).fetchModel() || ClientModel
+        , Group: new Group(this).fetchModel() || GroupModel
+        , Lender: new Lender(this).fetchModel() || LenderModel
+        , Transaction: new Transaction(this).fetchModel() || TransactionModel
+        , User: new User(this).fetchModel() || UserModel
       }
     })
   }
@@ -425,16 +440,18 @@ export class Mlipia {
       })
       this.app.use('/administration', express.static(path.join(__dirname, `views`, `admin`), { maxAge: '30s' }))
       this.app.use('/admin', express.static(path.join(__dirname, `views`, `admin`), { maxAge: '30s' }))
-      this.app.use('/app', express.static(path.join(__dirname, `views`, `app`), { maxAge: '30s' }))
       this.app.use('/client', express.static(path.join(__dirname, `views`, `client`), { maxAge: '30s' }))
-      this.app.use('/', express.static(path.join(__dirname, `views`, `client`), { maxAge: '30s' }))
+      this.app.use('/', express.static(path.join(__dirname, `views`, `admin`), { maxAge: '30s' }))
 
-      this.routes.admin = new AdminRoutes(this)
-      this.routes.client = new ClientRoutes(this)
+      this.routes.accounts = new AccountsRoutes(this)
+      this.routes.auth = new AuthRoutes(this)
       this.routes.clients = new ClientsRoutes(this)
       this.routes.groups = new GroupsRoutes(this)
       this.routes.lenders = new LendersRoutes(this)
+      this.routes.transactions = new TransactionsRoutes(this)
       this.routes.users = new UsersRoutes(this)
+      this.routes.admin = new AdminRoutes(this)
+      this.routes.client = new ClientRoutes(this)
       this.routes.general = new GeneralRoutes(this)
       resolve(this)
     })
@@ -456,6 +473,15 @@ export class Mlipia {
         console.log(process.env.NODE_ENV)
         let opened = false
         if (process.env.NODE_ENV == 'dev' && !opened) {
+          process.stdout.write(`Opening browser at http://localhost:${addr.port}/admin`)
+          opened = true
+          opn(`http://localhost:${addr.port}/admin`)
+            .then((success: any) => {
+
+            })
+            .catch((err: any) => {
+              process.stdout.write(`Couldn't launch browser`)
+            })
           process.stdout.write(`Opening browser at http://localhost:${addr.port}`)
           opened = true
           opn(`http://localhost:${addr.port}`)

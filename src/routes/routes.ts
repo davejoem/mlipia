@@ -1,17 +1,23 @@
+import { AccountsRoutes } from './accounts'
 import { AdminRoutes } from "./admin"
+import { AuthRoutes } from './auth'
 import { ClientsRoutes } from "./clients"
 import { ClientRoutes } from "./client"
 import { UsersRoutes } from "./users"
 import { GroupsRoutes } from "./groups"
 import { GeneralRoutes } from "./general"
 import { LendersRoutes } from "./lenders"
+import { TransactionsRoutes } from './transactions'
 
 export {
-  AdminRoutes
+  AccountsRoutes
+  , AdminRoutes
+  , AuthRoutes
   , ClientRoutes
   , ClientsRoutes
-  , GroupsRoutes
-  , UsersRoutes
   , GeneralRoutes
+  , GroupsRoutes
   , LendersRoutes
+  , TransactionsRoutes
+  , UsersRoutes
 }

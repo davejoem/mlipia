@@ -19,7 +19,7 @@ export class Api {
   public auth_socket: Socket;
   constructor(public http: Http) {
     this.connectSocket()
-    this.url = window.location.href.split(`#`)[0]
+    this.url = window.location.href.split(`/#`)[0]
   }
 
   connectSocket(domain?: string): Observable<Socket> {

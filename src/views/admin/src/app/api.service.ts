@@ -14,12 +14,12 @@ import { HybridMessage } from './models/models'
   providedIn: 'root'
 })
 export class Api {
-  // url: string = 'https://mlipia.herokuapp.com';
-  url: string = 'http://127.0.0.1:8000';
-  socket: Socket;
-  auth_socket: Socket;
+  public url: string
+  public socket: Socket;
+  public auth_socket: Socket;
   constructor(public http: Http) {
     this.connectSocket()
+    this.url = window.location.href.split(`#`)[0]
   }
 
   connectSocket(domain?: string): Observable<Socket> {

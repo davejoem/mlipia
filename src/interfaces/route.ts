@@ -6,7 +6,9 @@ export interface Route {
 
 export interface Rt {
   address: string
-  func: Function
-  method: string
+  func?: Function
+  funcs?: Function[]
+  method?: string
+  methods?: string[]
   mw?: Function[]
 }

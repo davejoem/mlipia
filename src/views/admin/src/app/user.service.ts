@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot } from '@angular/router'
 import { Storage as Store } from './storage.service'
 import { Api } from './api.service'
-import { HybridMessage } from './models/hybrid-message'
+import { HybridMessage } from './models/models'
 import { IUser } from './interfaces/interfaces'
 
 /**
@@ -119,6 +119,7 @@ export class User implements CanActivate, CanActivateChild, CanLoad {
    */
   signOut() {
     this._user = null;
+    this.storage.set(this.USER_KEY, null)
     return this.save()
   }
 

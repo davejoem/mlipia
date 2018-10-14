@@ -24,6 +24,10 @@ export class LendersRoutes implements Route {
     })
   }
 
+  private list(req: Request, res: Response): Lender[] {
+    return new Array()
+  }
+
   private register(): void {
     this.routes.push({
       address: '/lenders/list'
@@ -34,7 +38,4 @@ export class LendersRoutes implements Route {
     })
   }
 
-  private list(req: Request, res: Response): Lender[] {
-    return new Array()
-  }
 }

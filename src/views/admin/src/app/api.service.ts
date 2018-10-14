@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import * as io from 'socket.io-client'
 import { Socket } from 'socket.io-client'
-import { HybridMessage } from './models/hybrid-message'
+import { HybridMessage } from './models/models'
+
 /**
  * Api is a generic REST Api handler. Set your API url first.
  */

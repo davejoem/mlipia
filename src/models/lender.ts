@@ -8,7 +8,7 @@ export class Lender extends Typegoose {
    *
    */
   constructor(mlipia?: Mlipia) {
-    super();
+    super()
     this.mlipia = mlipia
   }
 
@@ -20,11 +20,8 @@ export class Lender extends Typegoose {
     return this.fetchModel()
   }
 
-  @prop()
-  date?: Date
-
-  public find(): any {
-  }
+  @prop({ required: true })
+  name: String
 
   public create(data: ILender): Promise<Lender> {
     return new Promise((resolve, reject) => {
@@ -42,4 +39,7 @@ export class Lender extends Typegoose {
 
 }
 
-export const LenderModel: ModelType<Lender> = new Lender().getModelForClass(Lender)
+export const LenderModel: ModelType<Lender> = new Lender().getModelForClass(Lender, {
+  // existingMongoose: this.mlipia.mongoose,
+  schemaOptions: { collection: 'lenders' }
+})

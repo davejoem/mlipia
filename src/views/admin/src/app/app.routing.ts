@@ -63,13 +63,13 @@ export const routes: Routes = [
             , canActivateChild: [User]
           }
           , {
-            path: 'transactions'
+            path: 'transactions/:select'
             , component: TransactionsComponent
             , data: { title: 'Transactions', expectedRole: 'admin' }
             , canActivateChild: [User]
           }
           , {
-            path: 'users'
+            path: 'users/:select'
             , component: UsersComponent
             , data: { title: 'Users', expectedRole: 'admin' }
             , canActivateChild: [User]
@@ -108,7 +108,7 @@ export const routes: Routes = [
             , canActivateChild: [User]
           }
           , {
-            path: 'transactions'
+            path: 'transactions/:select'
             , component: TransactionsComponent
             , data: { title: 'Transactions', expectedRole: 'manager' }
             , canActivateChild: [User]
@@ -135,7 +135,7 @@ export const routes: Routes = [
         , canLoad: [User]
         , children: [
           {
-            path: 'transactions'
+            path: 'transactions/:select'
             , component: TransactionsComponent
             , data: { title: 'Transactions', expectedRole: 'approver' }
             , canActivateChild: [User]

@@ -1,6 +1,5 @@
 import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
-import { Model } from 'mongoose';
 
 export class Client extends Typegoose {
   private mlipia: Mlipia
@@ -18,19 +17,17 @@ export class Client extends Typegoose {
     return this.fetchModel()
   }
 
-  @prop()
-  date?: Date
-  @prop()
-  patient?: string
-  @prop()
-  doctor?: string
-  @prop()
-  department?: string
-
-  public find(): any {
-
-  }
-
+  @prop({ required: true })
+  idno: Number
+  @prop({ required: true, default: 0 })
+  mlipia_balance: Number
+  @prop({ required: true })
+  name: String
+  @prop({ required: true })
+  rating: Number
 }
 
-export const ClientModel: ModelType<Client> = new Client().getModelForClass(Client)
+export const ClientModel: ModelType<Client> = new Client().getModelForClass(Client, {
+  // existingMongoose: this.mlipia.mongoose,
+  schemaOptions: { collection: 'clients' }
+})

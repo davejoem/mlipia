@@ -60,4 +60,6 @@ export class User extends Typegoose {
 
 }
 
-export const UserModel: ModelType<User> = new User().getModelForClass(User)
+export const UserModel: ModelType<User> = new User().getModelForClass(User, {
+  schemaOptions: { collection: `users` }
+})

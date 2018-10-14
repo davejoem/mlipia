@@ -1,6 +1,8 @@
-import { Rt, Route } from '../interfaces/interfaces'
-import { Mlipia } from "../server"
 import { Request, Response } from 'express'
+import { MongoError } from 'mongodb';
+import { Mlipia } from "../server"
+import { Rt, Route, ITransaction } from '../interfaces/interfaces'
+import { TransactionModel } from '../models/models';
 
 export class TransactionsRoutes implements Route {
   // private asd: Asd
@@ -17,12 +19,35 @@ export class TransactionsRoutes implements Route {
     this.listen()
   }
 
-  private add(req: Request, res: Response) {
-
+  private add(req: Request, res: Response): void {
+    let newTransaction: InstanceType<any> = new TransactionModel(req.body)
+    newTransaction.save().then((transaction: InstanceType<any>) => {
+      res.status(200).send(transaction)
+    }).catch((err: MongoError) => {
+      res.status(400).send(err)
+    })
   }
 
-  private list(req: Request, res: Response) {
-
+  private list(req: Request, res: Response): void {
+    console.log(req.body)
+    let sel: { success?: boolean }
+    switch (req.body.select) {
+      case `all`:
+        sel = {}
+        break
+      case `successful`:
+        sel = { success: true }
+        break
+      case `failed`:
+        sel = { success: false }
+    }
+    TransactionModel.find(sel).then((transactions: InstanceType<any>[]) => {
+      console.log(transactions)
+      res.status(200).send(transactions)
+    }).catch((err: MongoError) => {
+      res.status(400).send(err)
+      console.log(err)
+    })
   }
 
   public listen() {
@@ -44,7 +69,7 @@ export class TransactionsRoutes implements Route {
       , func: (req: Request, res: Response) => {
         this.list(req, res)
       }
-      , method: 'get'
+      , method: 'post'
     })
   }
 }

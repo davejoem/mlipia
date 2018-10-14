@@ -1,15 +1,7 @@
 import { RequestOptions } from '@angular/http'
+import { IHybridMessage } from '../interfaces/interfaces'
 
-export interface HybridMessageInterface {
-    data?: any
-    message: string
-    method: string
-    opts?: RequestOptions
-    params?: any
-    url: string
-}
-
-export class HybridMessage implements HybridMessageInterface {
+export class HybridMessage implements IHybridMessage {
     constructor(
         public url
         , public message

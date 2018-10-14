@@ -22,14 +22,15 @@ export class Transaction extends Typegoose {
   @prop({ required: true, default: Date.now() })
   date: Date
   @prop({ ref: Account, required: true })
-  account?: Ref<Account>
+  account: Ref<Account>
   @prop({ ref: Client, required: true })
   client: Ref<Client>
-
-  public find(): any {
-
-  }
+  @prop({ required: false })
+  success?: Boolean
 
 }
 
-export const TransactionModel: ModelType<Transaction> = new Transaction().getModelForClass(Transaction)
+export const TransactionModel: ModelType<Transaction> = new Transaction().getModelForClass(Transaction, {
+  // existingMongoose: this.mlipia.mongoose,
+  schemaOptions: { collection: 'transactions' }
+})

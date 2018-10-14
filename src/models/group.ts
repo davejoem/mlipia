@@ -7,7 +7,7 @@ export class Group extends Typegoose {
   private mlipia: Mlipia
 
   constructor(mlipia?: Mlipia) {
-    super();
+    super()
     this.mlipia = mlipia
   }
 
@@ -18,11 +18,11 @@ export class Group extends Typegoose {
   get model() {
     return this.fetchModel()
   }
-  @prop()
+  @prop({ required: true })
   name: string
 
-  @prop()
-  rights: string[]
+  @prop({ required: false })
+  rights?: string[]
 
   @prop()
   users: typeof Schema.Types.ObjectId[]
@@ -40,10 +40,10 @@ export class Group extends Typegoose {
       })
     })
   }
-  public find(): any {
-
-  }
 
 }
 
-export const GroupModel: ModelType<Group> = new Group().getModelForClass(Group)
+export const GroupModel: ModelType<Group> = new Group().getModelForClass(Group, {
+  // existingMongoose: this.mlipia.mongoose,
+  schemaOptions: { collection: 'groups' }
+})

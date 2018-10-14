@@ -389,7 +389,7 @@ var Api = /** @class */ (function () {
     function Api(http) {
         this.http = http;
         this.connectSocket();
-        this.url = window.location.href.split("#")[0];
+        this.url = window.location.origin;
     }
     Api.prototype.connectSocket = function (domain) {
         var _this = this;

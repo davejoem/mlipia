@@ -388,9 +388,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var Api = /** @class */ (function () {
     function Api(http) {
         this.http = http;
-        // url: string = 'https://mlipia.herokuapp.com';
-        this.url = 'http://127.0.0.1:8000';
         this.connectSocket();
+        this.url = window.location.href.split("#")[0];
     }
     Api.prototype.connectSocket = function (domain) {
         var _this = this;

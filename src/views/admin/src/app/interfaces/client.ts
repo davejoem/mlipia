@@ -1,7 +1,7 @@
 export interface IClient {
-  fname: string
-  mname: string
-  lname: string
-  id: number
+  name: string
   rating: number
+  mlipia_balance: number
+  requests?: any[]
+  mlipia_savings_balance?: number
 }

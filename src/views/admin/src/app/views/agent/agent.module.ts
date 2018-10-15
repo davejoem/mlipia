@@ -1,19 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
+import { ModalModule } from 'ngx-bootstrap/modal'
 
-import { AgentRoutingModule } from './agent-routing.module';
-
-import { ClientsComponent } from '../admin/clients.component'
-import { UsersComponent } from '../admin/users.component'
+import { AgentRoutingModule } from './agent-routing.module'
+import { ContentModule } from '../content/content.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    AgentRoutingModule
-  ],
-  declarations: [
-    , ClientsComponent
-    , UsersComponent
+    CommonModule
+    , ContentModule
+    , AgentRoutingModule
+    , ModalModule.forRoot()
   ]
 })
 export class AgentModule { }

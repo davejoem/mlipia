@@ -1,0 +1,10 @@
+<div class="floatLeft clickable animated fadeIn col-sm-6 col-lg-3" *ngFor="let group of groups">
+  <div class="card text-white bg-primary">
+    <div class="card-body pb-0">
+      <div class="text-value">{{ group.name }}</div>
+      <div>Users: {{ group.users.all.length }} </div>
+      <div>Active: {{ group.users.active.length}}</div>
+      <div>Disabled: {{ group.users.disabled.length}}</div>
+    </div>
+  </div>
+</div>

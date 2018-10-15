@@ -1,7 +1,7 @@
-import { prop, Typegoose, ModelType, InstanceType } from 'typegoose'
+import { prop, Typegoose, ModelType, InstanceType, Ref } from 'typegoose'
 import * as mongoose from 'mongoose'
 import { Mlipia } from '../server'
-import { IUser } from '../interfaces/user'
+import { IUser, IGroup } from '../interfaces/interfaces'
 
 export class User extends Typegoose {
   private mlipia: Mlipia
@@ -19,17 +19,23 @@ export class User extends Typegoose {
     return this.fetchModel()
   }
 
-  @prop()
-  username?: string
+  @prop({ required: true, default: true })
+  active: boolean
 
-  @prop()
+  @prop({ required: true })
+  username: string
+
+  @prop({ required: true })
   name: string
 
-  @prop()
-  groups?: typeof mongoose.Schema.Types.ObjectId[]
+  @prop({ required: true, default: [] })
+  groups: Ref<IGroup>[]
 
   @prop()
   role: string
+
+  @prop({ required: true, default: [] })
+  notifications: Ref<Notification>[]
 
 
   public create(data: IUser): Promise<User> {

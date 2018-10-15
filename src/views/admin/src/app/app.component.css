@@ -1,0 +1,10 @@
+.floatLeft {
+  float: left;
+}
+.text-value {
+  font-size: 1.03125rem;
+  font-weight: 600;
+}
+.clickable {
+  cursor: pointer;
+}

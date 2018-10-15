@@ -71,5 +71,12 @@ export class TransactionsRoutes implements Route {
       }
       , method: 'post'
     })
+    this.routes.push({
+      address: '/transactions/list'
+      , func: (req: Request, res: Response) => {
+        this.list(req, res)
+      }
+      , method: 'get'
+    })
   }
 }

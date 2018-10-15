@@ -1,22 +1,17 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { ManagerRoutingModule } from './manager-routing.module'
+import { ModalModule } from 'ngx-bootstrap/modal'
 
-import { AccountsComponent } from '../admin/accounts.component'
-import { ClientsComponent } from '../admin/clients.component'
-import { TransactionsComponent } from '../admin/transactions.component'
-import { LendersComponent } from '../admin/lenders.component';
+// modules to import
+import { ContentModule } from '../content/content.module';
+import { ManagerRoutingModule } from './manager-routing.module'
 
 @NgModule({
   imports: [
     CommonModule
+    , ContentModule
     , ManagerRoutingModule
-  ],
-  declarations: [
-    AccountsComponent
-    , ClientsComponent
-    , LendersComponent
-    , TransactionsComponent
+    , ModalModule.forRoot()
   ]
 })
 export class ManagerModule { }

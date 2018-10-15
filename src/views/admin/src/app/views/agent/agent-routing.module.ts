@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { ClientsComponent } from '../admin/clients.component'
-import { AgentComponent } from './agent.component';
+import { User } from '../../user.service'
+
+import { ClientsComponent } from '../content/clients.component'
 
 const routes: Routes = [
   {
-    path: 'agent',
-    component: AgentComponent,
-    data: {
-      title: 'Agent'
-    },
-    children: [
+    path: ''
+    , data: { title: 'Agent', expectedRole: 'agent' }
+    , canActivate: [User]
+    , canLoad: [User]
+    , children: [
       {
-        path: 'clients',
-        component: ClientsComponent,
-        data: {
-          title: 'Clients'
-        }
+        path: 'clients'
+        , component: ClientsComponent
+        , data: { title: 'Clients', expectedRole: 'agent' }
+        , canActivateChild: [User]
       }
     ]
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

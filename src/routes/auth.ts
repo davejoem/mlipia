@@ -41,7 +41,7 @@ export class AuthRoutes implements Route {
   }
 
   private signIn(req: Request, res: Response) {
-    res.status(200).send({ username: 'admin', role: 'admin' })
+    res.status(200).send({ username: 'admin', role: 'approver' })
   }
 
   private getToken(req: Request, res: Response) {

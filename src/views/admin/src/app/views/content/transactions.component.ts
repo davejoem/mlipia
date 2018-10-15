@@ -7,6 +7,7 @@ import { HybridMessage } from '../../models/models'
 
 @Component({
   templateUrl: 'transactions.component.html'
+  , styleUrls: ['../../app.component.css']
 })
 export class TransactionsComponent implements OnInit {
   private selected: string

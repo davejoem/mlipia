@@ -3,4 +3,5 @@ export interface IUser {
   username: string
   groups?: string[]
   role: string
+  active: boolean
 }

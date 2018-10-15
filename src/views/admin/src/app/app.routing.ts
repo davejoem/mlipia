@@ -1,23 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 // Import Containers
-import { DefaultLayoutComponent } from './containers';
+import { DefaultLayoutComponent } from './containers'
 
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { SigninComponent } from './views/signin/signin.component';
-import { RegisterComponent } from './views/register/register.component';
-import { AdminComponent } from './views/admin/admin.component';
-import { ManagerComponent } from './views/manager/manager.component';
-import { ApproverComponent } from './views/approver/approver.component';
-import { AgentComponent } from './views/agent/agent.component';
-import { AccountsComponent } from './views/admin/accounts.component';
-import { TransactionsComponent } from './views/admin/transactions.component';
-import { UsersComponent } from './views/admin/users.component';
-import { GroupsComponent } from './views/admin/groups.component';
-import { ClientsComponent } from './views/admin/clients.component';
-import { LendersComponent } from './views/admin/lenders.component';
+import { P404Component } from './views/error/404.component'
+import { P500Component } from './views/error/500.component'
+import { SigninComponent } from './views/signin/signin.component'
+import { RegisterComponent } from './views/register/register.component'
 import { User } from './user.service';
 
 export const routes: Routes = [
@@ -43,6 +33,13 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'signin',
+    component: SigninComponent,
+    data: {
+      title: 'Sign In'
+    }
+  },
+  {
     path: 'home',
     component: DefaultLayoutComponent,
     data: {
@@ -51,123 +48,22 @@ export const routes: Routes = [
     children: [
       {
         path: 'admin'
-        , component: AdminComponent
         , data: { title: 'Administrator', expectedRole: 'admin' }
         , canActivate: [User]
         , canLoad: [User]
-        , children: [
-          {
-            path: 'accounts'
-            , component: AccountsComponent
-            , data: { title: 'Accounts', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'transactions/:select'
-            , component: TransactionsComponent
-            , data: { title: 'Transactions', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'users/:select'
-            , component: UsersComponent
-            , data: { title: 'Users', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'groups'
-            , component: GroupsComponent
-            , data: { title: 'Groups', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'clients'
-            , component: ClientsComponent
-            , data: { title: 'Clients', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'lenders'
-            , component: LendersComponent
-            , data: { title: 'Lenders', expectedRole: 'admin' }
-            , canActivateChild: [User]
-          }
-        ]
+        , loadChildren: './views/admin/admin.module#AdminModule'
       },
       {
         path: 'manager'
-        , component: ManagerComponent
-        , data: { title: 'Manager', expectedRole: 'manager' }
-        , canActivate: [User]
-        , canLoad: [User]
-        , children: [
-          {
-            path: 'accounts'
-            , component: AccountsComponent
-            , data: { title: 'Accounts', expectedRole: 'manager' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'transactions/:select'
-            , component: TransactionsComponent
-            , data: { title: 'Transactions', expectedRole: 'manager' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'clients'
-            , component: ClientsComponent
-            , data: { title: 'Clients', expectedRole: 'manager' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'lenders'
-            , component: LendersComponent
-            , data: { title: 'Lenders', expectedRole: 'manager' }
-            , canActivateChild: [User]
-          }
-        ]
+        , loadChildren: './views/manager/manager.module#ManagerModule'
       },
       {
         path: 'approver'
-        , component: ApproverComponent
-        , data: { title: 'Approver', expectedRole: 'approver' }
-        , canActivate: [User]
-        , canLoad: [User]
-        , children: [
-          {
-            path: 'transactions/:select'
-            , component: TransactionsComponent
-            , data: { title: 'Transactions', expectedRole: 'approver' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'clients'
-            , component: ClientsComponent
-            , data: { title: 'Clients', expectedRole: 'approver' }
-            , canActivateChild: [User]
-          }
-          , {
-            path: 'lenders'
-            , component: LendersComponent
-            , data: { title: 'Lenders', expectedRole: 'approver' }
-            , canActivateChild: [User]
-          }
-        ]
+        , loadChildren: './views/approver/approver.module#ApproverModule'
       },
       {
         path: 'agent'
-        , component: AgentComponent
-        , data: { title: 'Agent', expectedRole: 'agent' }
-        , canActivate: [User]
-        , canLoad: [User]
-        , children: [
-          {
-            path: 'clients'
-            , component: ClientsComponent
-            , data: { title: 'Clients', expectedRole: 'agent' }
-            , canActivateChild: [User]
-          }
-        ]
+        , loadChildren: './views/agent/agent.module#AgentModule'
       },
       {
         path: 'base',
@@ -202,13 +98,6 @@ export const routes: Routes = [
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
       }
     ]
-  },
-  {
-    path: 'signin',
-    component: SigninComponent,
-    data: {
-      title: 'Sign In'
-    }
   },
   {
     path: '',

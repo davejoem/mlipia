@@ -1,7 +1,12 @@
 import { Schema } from "mongoose";
+import { IUser } from "./interfaces";
 
 export interface IGroup {
   name: string
-  rights: string[]
-  users?: typeof Schema.Types.ObjectId[]
+  rights?: string[]
+  users?: {
+    all?: IUser[]
+    active?: IUser[]
+    disabled?: IUser[]
+  }
 }

@@ -1,8 +1,10 @@
-import { IAccount, IClient } from './interfaces'
+import { IAccount, IClient, IUser } from './interfaces'
 
 export interface ITransaction {
-  amount: number
   account: IAccount
+  amount: number
+  approver: IUser
   client: IClient
+  date: Date
   success?: boolean
 }

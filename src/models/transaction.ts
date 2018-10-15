@@ -1,7 +1,6 @@
 import { prop, Typegoose, Ref, ModelType, InstanceType } from 'typegoose'
 import { Mlipia } from '../server'
-import { Account, Client } from './models'
-import { TransformCallback } from 'stream';
+import { Account, Client, User } from './models'
 
 export class Transaction extends Typegoose {
   private mlipia: Mlipia
@@ -21,10 +20,19 @@ export class Transaction extends Typegoose {
 
   @prop({ required: true, default: Date.now() })
   date: Date
+
   @prop({ ref: Account, required: true })
   account: Ref<Account>
+
+  @prop({ required: true })
+  amount: Number
+
+  @prop({ ref: User, required: true })
+  approver: Ref<User>
+
   @prop({ ref: Client, required: true })
   client: Ref<Client>
+
   @prop({ required: false })
   success?: Boolean
 

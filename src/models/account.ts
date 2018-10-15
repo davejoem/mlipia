@@ -24,7 +24,8 @@ export class Account extends Typegoose {
   balance: Number
   @prop({ required: true, default: [] })
   transactions: Ref<Transaction>[]
-
+  @prop({ required: false })
+  apiEnd?: String
 }
 
 export const AccountModel: ModelType<Account> = new Account().getModelForClass(Account, {

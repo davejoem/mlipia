@@ -288,6 +288,27 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./views/admin/admin.module": [
+		"./src/app/views/admin/admin.module.ts",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~e8d0e9d3",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~d591f0d4",
+		"common",
+		"views-admin-admin-module"
+	],
+	"./views/agent/agent.module": [
+		"./src/app/views/agent/agent.module.ts",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~e8d0e9d3",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~d591f0d4",
+		"common",
+		"views-agent-agent-module"
+	],
+	"./views/approver/approver.module": [
+		"./src/app/views/approver/approver.module.ts",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~e8d0e9d3",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~d591f0d4",
+		"common",
+		"views-approver-approver-module"
+	],
 	"./views/base/base.module": [
 		"./src/app/views/base/base.module.ts",
 		"common",
@@ -311,8 +332,16 @@ var map = {
 		"./src/app/views/icons/icons.module.ts",
 		"views-icons-icons-module"
 	],
+	"./views/manager/manager.module": [
+		"./src/app/views/manager/manager.module.ts",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~e8d0e9d3",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~d591f0d4",
+		"common",
+		"views-manager-manager-module"
+	],
 	"./views/notifications/notifications.module": [
 		"./src/app/views/notifications/notifications.module.ts",
+		"views-admin-admin-module~views-agent-agent-module~views-approver-approver-module~views-manager-manag~e8d0e9d3",
 		"common",
 		"views-notifications-notifications-module"
 	],
@@ -389,7 +418,7 @@ var Api = /** @class */ (function () {
     function Api(http) {
         this.http = http;
         this.connectSocket();
-        this.url = window.location.origin;
+        this.url = "http://localhost:8000" || window.location.origin;
     }
     Api.prototype.connectSocket = function (domain) {
         var _this = this;
@@ -580,16 +609,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_bootstrap_tabs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-bootstrap/tabs */ "./node_modules/ngx-bootstrap/tabs/index.js");
 /* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ng2-charts/ng2-charts */ "./node_modules/ng2-charts/ng2-charts.js");
 /* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./views/admin/admin.component */ "./src/app/views/admin/admin.component.ts");
-/* harmony import */ var _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./views/manager/manager.component */ "./src/app/views/manager/manager.component.ts");
-/* harmony import */ var _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./views/approver/approver.component */ "./src/app/views/approver/approver.component.ts");
-/* harmony import */ var _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./views/agent/agent.component */ "./src/app/views/agent/agent.component.ts");
-/* harmony import */ var _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./views/admin/accounts.component */ "./src/app/views/admin/accounts.component.ts");
-/* harmony import */ var _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/admin/transactions.component */ "./src/app/views/admin/transactions.component.ts");
-/* harmony import */ var _views_admin_users_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/admin/users.component */ "./src/app/views/admin/users.component.ts");
-/* harmony import */ var _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/admin/clients.component */ "./src/app/views/admin/clients.component.ts");
-/* harmony import */ var _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/admin/groups.component */ "./src/app/views/admin/groups.component.ts");
-/* harmony import */ var _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./views/admin/lenders.component */ "./src/app/views/admin/lenders.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -617,23 +636,13 @@ var APP_CONTAINERS = [
     _containers__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutComponent"]
 ];
 
-//import our services
+// import our services
 
 
 
 // Import routing module
 
 // Import 3rd party components
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -673,16 +682,6 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]
             ].concat(APP_CONTAINERS, [
-                _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_25__["AccountsComponent"],
-                _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"],
-                _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_22__["ManagerComponent"],
-                _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_23__["ApproverComponent"],
-                _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_24__["AgentComponent"],
-                _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_28__["ClientsComponent"],
-                _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_29__["GroupsComponent"],
-                _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_30__["LendersComponent"],
-                _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_26__["TransactionsComponent"],
-                _views_admin_users_component__WEBPACK_IMPORTED_MODULE_27__["UsersComponent"],
                 _views_error_404_component__WEBPACK_IMPORTED_MODULE_9__["P404Component"],
                 _views_error_500_component__WEBPACK_IMPORTED_MODULE_10__["P500Component"],
                 _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_11__["SigninComponent"],
@@ -717,17 +716,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_error_500_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/error/500.component */ "./src/app/views/error/500.component.ts");
 /* harmony import */ var _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/signin/signin.component */ "./src/app/views/signin/signin.component.ts");
 /* harmony import */ var _views_register_register_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/register/register.component */ "./src/app/views/register/register.component.ts");
-/* harmony import */ var _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/admin/admin.component */ "./src/app/views/admin/admin.component.ts");
-/* harmony import */ var _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/manager/manager.component */ "./src/app/views/manager/manager.component.ts");
-/* harmony import */ var _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/approver/approver.component */ "./src/app/views/approver/approver.component.ts");
-/* harmony import */ var _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/agent/agent.component */ "./src/app/views/agent/agent.component.ts");
-/* harmony import */ var _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/admin/accounts.component */ "./src/app/views/admin/accounts.component.ts");
-/* harmony import */ var _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/admin/transactions.component */ "./src/app/views/admin/transactions.component.ts");
-/* harmony import */ var _views_admin_users_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/admin/users.component */ "./src/app/views/admin/users.component.ts");
-/* harmony import */ var _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/admin/groups.component */ "./src/app/views/admin/groups.component.ts");
-/* harmony import */ var _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/admin/clients.component */ "./src/app/views/admin/clients.component.ts");
-/* harmony import */ var _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/admin/lenders.component */ "./src/app/views/admin/lenders.component.ts");
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -737,16 +726,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // Import Containers
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -776,6 +755,13 @@ var routes = [
         }
     },
     {
+        path: 'signin',
+        component: _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_5__["SigninComponent"],
+        data: {
+            title: 'Sign In'
+        }
+    },
+    {
         path: 'home',
         component: _containers__WEBPACK_IMPORTED_MODULE_2__["DefaultLayoutComponent"],
         data: {
@@ -784,123 +770,22 @@ var routes = [
         children: [
             {
                 path: 'admin',
-                component: _views_admin_admin_component__WEBPACK_IMPORTED_MODULE_7__["AdminComponent"],
                 data: { title: 'Administrator', expectedRole: 'admin' },
-                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                children: [
-                    {
-                        path: 'accounts',
-                        component: _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__["AccountsComponent"],
-                        data: { title: 'Accounts', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'transactions/:select',
-                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
-                        data: { title: 'Transactions', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'users/:select',
-                        component: _views_admin_users_component__WEBPACK_IMPORTED_MODULE_13__["UsersComponent"],
-                        data: { title: 'Users', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'groups',
-                        component: _views_admin_groups_component__WEBPACK_IMPORTED_MODULE_14__["GroupsComponent"],
-                        data: { title: 'Groups', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'clients',
-                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
-                        data: { title: 'Clients', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'lenders',
-                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
-                        data: { title: 'Lenders', expectedRole: 'admin' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    }
-                ]
+                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_7__["User"]],
+                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_7__["User"]],
+                loadChildren: './views/admin/admin.module#AdminModule'
             },
             {
                 path: 'manager',
-                component: _views_manager_manager_component__WEBPACK_IMPORTED_MODULE_8__["ManagerComponent"],
-                data: { title: 'Manager', expectedRole: 'manager' },
-                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                children: [
-                    {
-                        path: 'accounts',
-                        component: _views_admin_accounts_component__WEBPACK_IMPORTED_MODULE_11__["AccountsComponent"],
-                        data: { title: 'Accounts', expectedRole: 'manager' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'transactions/:select',
-                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
-                        data: { title: 'Transactions', expectedRole: 'manager' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'clients',
-                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
-                        data: { title: 'Clients', expectedRole: 'manager' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'lenders',
-                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
-                        data: { title: 'Lenders', expectedRole: 'manager' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    }
-                ]
+                loadChildren: './views/manager/manager.module#ManagerModule'
             },
             {
                 path: 'approver',
-                component: _views_approver_approver_component__WEBPACK_IMPORTED_MODULE_9__["ApproverComponent"],
-                data: { title: 'Approver', expectedRole: 'approver' },
-                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                children: [
-                    {
-                        path: 'transactions/:select',
-                        component: _views_admin_transactions_component__WEBPACK_IMPORTED_MODULE_12__["TransactionsComponent"],
-                        data: { title: 'Transactions', expectedRole: 'approver' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'clients',
-                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
-                        data: { title: 'Clients', expectedRole: 'approver' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    },
-                    {
-                        path: 'lenders',
-                        component: _views_admin_lenders_component__WEBPACK_IMPORTED_MODULE_16__["LendersComponent"],
-                        data: { title: 'Lenders', expectedRole: 'approver' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    }
-                ]
+                loadChildren: './views/approver/approver.module#ApproverModule'
             },
             {
                 path: 'agent',
-                component: _views_agent_agent_component__WEBPACK_IMPORTED_MODULE_10__["AgentComponent"],
-                data: { title: 'Agent', expectedRole: 'agent' },
-                canActivate: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                canLoad: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]],
-                children: [
-                    {
-                        path: 'clients',
-                        component: _views_admin_clients_component__WEBPACK_IMPORTED_MODULE_15__["ClientsComponent"],
-                        data: { title: 'Clients', expectedRole: 'agent' },
-                        canActivateChild: [_user_service__WEBPACK_IMPORTED_MODULE_17__["User"]]
-                    }
-                ]
+                loadChildren: './views/agent/agent.module#AgentModule'
             },
             {
                 path: 'base',
@@ -937,13 +822,6 @@ var routes = [
         ]
     },
     {
-        path: 'signin',
-        component: _views_signin_signin_component__WEBPACK_IMPORTED_MODULE_5__["SigninComponent"],
-        data: {
-            title: 'Sign In'
-        }
-    },
-    {
         path: '',
         redirectTo: 'signin',
         pathMatch: 'full',
@@ -972,7 +850,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [fixed]=\"true\" [navbarBrandFull]=\"{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}\"\n  [sidebarToggler]=\"'lg'\" [asideMenuToggler]=\"'lg'\">\n  <ul class=\"nav navbar-nav d-md-down-none\">\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Dashboard</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Users</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Settings</a>\n    </li>\n  </ul>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-bell\"></i><span class=\"badge badge-pill badge-danger\">5</span></a>\n    </li>\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-list\"></i></a>\n    </li>\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-location-pin\"></i></a>\n    </li>\n    <li class=\"nav-item dropdown\" dropdown placement=\"bottom right\">\n      <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"\n        dropdownToggle (click)=\"false\">\n        <img src=\"assets/img/avatars/6.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" />\n      </a>\n      <div class=\"dropdown-menu dropdown-menu-right\" *dropdownMenu aria-labelledby=\"simple-dropdown\">\n        <div class=\"dropdown-header text-center\"><strong>Account</strong></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-bell-o\"></i> Updates<span class=\"badge badge-info\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-envelope-o\"></i> Messages<span class=\"badge badge-success\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-tasks\"></i> Tasks<span class=\"badge badge-danger\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-comments\"></i> Comment<span class=\"badge badge-warning\">42</span></a>\n        <div class=\"dropdown-header text-center\"><strong>Settings</strong></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-user\"></i> Profile</a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-wrench\"></i> Setting</a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-usd\"></i> Payments<span class=\"badge badge-dark\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-file\"></i> Projects<span class=\"badge badge-primary\">42</span></a>\n        <div class=\"divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-shield\"></i> Lock account</a>\n        <a class=\"dropdown-item\" (click)=\"signout()\"><i class=\"fa fa-lock\"></i> Sign Out</a>\n      </div>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <app-sidebar [fixed]=\"true\" [display]=\"'lg'\">\n    <app-sidebar-nav [navItems]=\"navItems\" [perfectScrollbar] [disabled]=\"sidebarMinimized\"></app-sidebar-nav>\n    <app-sidebar-minimizer></app-sidebar-minimizer>\n  </app-sidebar>\n  <!-- Main content -->\n  <main class=\"main\">\n    <!-- Breadcrumb -->\n    <ol class=\"breadcrumb\">\n      <app-breadcrumb></app-breadcrumb>\n      <!-- Breadcrumb Menu-->\n      <li class=\"breadcrumb-menu d-md-down-none\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n          <a class=\"btn\" href=\"#\"><i class=\"icon-speech\"></i></a>\n          <a class=\"btn\" [routerLink]=\"['/dashboard']\"><i class=\"icon-graph\"></i> &nbsp;Dashboard</a>\n          <a class=\"btn\" href=\"#\"><i class=\"icon-settings\"></i> &nbsp;Settings</a>\n        </div>\n      </li>\n    </ol>\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n  <app-aside [fixed]=\"true\" [display]=\"false\">\n    <tabset>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-list\"></i></ng-template>\n        <div class=\"list-group list-group-accent\">\n          <div class=\"list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small\">Today</div>\n          <div class=\"list-group-item list-group-item-accent-warning list-group-item-divider\">\n            <div class=\"avatar float-right\">\n              <img class=\"img-avatar\" src=\"assets/img/avatars/7.jpg\" alt=\"admin@bootstrapmaster.com\">\n            </div>\n            <div>Meeting with\n              <strong>Lucas</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  1 - 3pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-location-pin\"></i>  Palo Alto, CA</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-info\">\n            <div class=\"avatar float-right\">\n              <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n            </div>\n            <div>Skype with\n              <strong>Megan</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  4 - 5pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-social-skype\"></i>  On-line</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small\">Tomorrow</div>\n          <div class=\"list-group-item list-group-item-accent-danger list-group-item-divider\">\n            <div>New UI Project -\n              <strong>deadline</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  10 - 11pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-home\"></i>  creativeLabs HQ</small>\n            <div class=\"avatars-stack mt-2\">\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/2.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/3.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/5.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/6.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n            </div>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-success list-group-item-divider\">\n            <div>\n              <strong>#10 Startups.Garden</strong> Meetup</div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  1 - 3pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-location-pin\"></i>  Palo Alto, CA</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-primary list-group-item-divider\">\n            <div>\n              <strong>Team meeting</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  4 - 6pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-home\"></i>  creativeLabs HQ</small>\n            <div class=\"avatars-stack mt-2\">\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/2.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/3.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/5.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/6.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/7.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/8.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n            </div>\n          </div>\n        </div>\n      </tab>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-speech\"></i></ng-template>\n        <div class=\"p-3\">\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n        </div>\n      </tab>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-settings\"></i></ng-template>\n        <div class=\"p-3\">\n          <h6>Settings</h6>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-4\">\n              <small><b>Option 1</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\" checked>\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n                incididunt ut labore et dolore magna aliqua.</small>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 2</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\">\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n                incididunt ut labore et dolore magna aliqua.</small>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 3</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\">\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n                <span class=\"switch-handle\"></span>\n              </label>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 4</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\" checked>\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n          </div>\n          <hr>\n          <h6>System Utilization</h6>\n          <div class=\"text-uppercase mb-1 mt-4\"><small><b>CPU Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">348 Processes. 1/4 Cores.</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>Memory Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 70%\" aria-valuenow=\"70\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">11444GB/16384MB</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>SSD 1 Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 95%\" aria-valuenow=\"95\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">243GB/256GB</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>SSD 2 Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 10%\" aria-valuenow=\"10\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">25GB/256GB</small>\n        </div>\n      </tab>\n    </tabset>\n  </app-aside>\n</div>\n<app-footer>\n  <span><a href=\"https://coreui.io\">CoreUI</a> &copy; 2018 creativeLabs.</span>\n  <span class=\"ml-auto\">Powered by <a href=\"https://coreui.io/angular\">CoreUI for Angular</a></span>\n</app-footer>"
+module.exports = "<app-header [fixed]=\"true\" [navbarBrandFull]=\"{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}\"\n  [navbarBrandMinimized]=\"{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}\"\n  [sidebarToggler]=\"'lg'\" [asideMenuToggler]=\"'lg'\">\n  <ul class=\"nav navbar-nav d-md-down-none\">\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Dashboard</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Users</a>\n    </li>\n    <li class=\"nav-item px-3\">\n      <a class=\"nav-link\" href=\"#\">Settings</a>\n    </li>\n  </ul>\n  <ul class=\"nav navbar-nav ml-auto\">\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-bell\"></i><span class=\"badge badge-pill badge-danger\">5</span></a>\n    </li>\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-list\"></i></a>\n    </li>\n    <li class=\"nav-item d-md-down-none\">\n      <a class=\"nav-link\" href=\"#\"><i class=\"icon-location-pin\"></i></a>\n    </li>\n    <li class=\"nav-item dropdown\" dropdown placement=\"bottom right\">\n      <a class=\"nav-link\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\"\n        dropdownToggle (click)=\"false\">\n        <img src=\"assets/img/avatars/6.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" />\n      </a>\n      <div class=\"dropdown-menu dropdown-menu-right\" *dropdownMenu aria-labelledby=\"simple-dropdown\">\n        <div class=\"dropdown-header text-center\"><strong>Account</strong></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-bell-o\"></i> Updates<span class=\"badge badge-info\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-envelope-o\"></i> Messages<span class=\"badge badge-success\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-tasks\"></i> Tasks<span class=\"badge badge-danger\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-comments\"></i> Comment<span class=\"badge badge-warning\">42</span></a>\n        <div class=\"dropdown-header text-center\"><strong>Settings</strong></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-user\"></i> Profile</a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-wrench\"></i> Setting</a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-usd\"></i> Payments<span class=\"badge badge-dark\">42</span></a>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-file\"></i> Projects<span class=\"badge badge-primary\">42</span></a>\n        <div class=\"divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\"><i class=\"fa fa-shield\"></i> Lock account</a>\n        <a class=\"dropdown-item\" (click)=\"signout()\"><i class=\"fa fa-lock\"></i> Sign Out</a>\n      </div>\n    </li>\n  </ul>\n</app-header>\n<div class=\"app-body\">\n  <app-sidebar [fixed]=\"true\" [display]=\"'lg'\">\n    <app-sidebar-nav [navItems]=\"navItems\" [perfectScrollbar] [disabled]=\"sidebarMinimized\"></app-sidebar-nav>\n    <app-sidebar-minimizer></app-sidebar-minimizer>\n  </app-sidebar>\n  <!-- Main content -->\n  <main class=\"main\">\n    <!-- Breadcrumb -->\n    <ol class=\"breadcrumb\">\n      <app-breadcrumb></app-breadcrumb>\n      <!-- Breadcrumb Menu-->\n      <li class=\"breadcrumb-menu d-md-down-none\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"Button group with nested dropdown\">\n          <a class=\"btn\" href=\"#\"><i class=\"icon-speech\"></i></a>\n          <a class=\"btn\" [routerLink]=\"['/dashboard']\"><i class=\"icon-graph\"></i> &nbsp;Dashboard</a>\n          <a class=\"btn\" href=\"#\"><i class=\"icon-settings\"></i> &nbsp;Settings</a>\n        </div>\n      </li>\n    </ol>\n    <div class=\"container-fluid\">\n      <router-outlet></router-outlet>\n    </div><!-- /.container-fluid -->\n  </main>\n  <app-aside [fixed]=\"true\" [display]=\"false\">\n    <tabset>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-list\"></i></ng-template>\n        <div class=\"list-group list-group-accent\">\n          <div class=\"list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small\">Today</div>\n          <div class=\"list-group-item list-group-item-accent-warning list-group-item-divider\">\n            <div class=\"avatar float-right\">\n              <img class=\"img-avatar\" src=\"assets/img/avatars/7.jpg\" alt=\"admin@bootstrapmaster.com\">\n            </div>\n            <div>Meeting with\n              <strong>Lucas</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  1 - 3pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-location-pin\"></i>  Palo Alto, CA</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-info\">\n            <div class=\"avatar float-right\">\n              <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n            </div>\n            <div>Skype with\n              <strong>Megan</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  4 - 5pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-social-skype\"></i>  On-line</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small\">Tomorrow</div>\n          <div class=\"list-group-item list-group-item-accent-danger list-group-item-divider\">\n            <div>New UI Project -\n              <strong>deadline</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  10 - 11pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-home\"></i>  creativeLabs HQ</small>\n            <div class=\"avatars-stack mt-2\">\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/2.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/3.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/5.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/6.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n            </div>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-success list-group-item-divider\">\n            <div>\n              <strong>#10 Startups.Garden</strong> Meetup</div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  1 - 3pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-location-pin\"></i>  Palo Alto, CA</small>\n          </div>\n          <div class=\"list-group-item list-group-item-accent-primary list-group-item-divider\">\n            <div>\n              <strong>Team meeting</strong>\n            </div>\n            <small class=\"text-muted mr-3\">\n              <i class=\"icon-calendar\"></i>  4 - 6pm</small>\n            <small class=\"text-muted\">\n              <i class=\"icon-home\"></i>  creativeLabs HQ</small>\n            <div class=\"avatars-stack mt-2\">\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/2.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/3.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/4.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/5.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/6.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/7.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n              <div class=\"avatar avatar-xs\">\n                <img class=\"img-avatar\" src=\"assets/img/avatars/8.jpg\" alt=\"admin@bootstrapmaster.com\">\n              </div>\n            </div>\n          </div>\n        </div>\n      </tab>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-speech\"></i></ng-template>\n        <div class=\"p-3\">\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n          <hr>\n          <div class=\"message\">\n            <div class=\"py-3 pb-5 mr-3 float-left\">\n              <div class=\"avatar\">\n                <img src=\"assets/img/avatars/7.jpg\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\">\n                <span class=\"avatar-status badge-success\"></span>\n              </div>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lukasz Holeczek</small>\n              <small class=\"text-muted float-right mt-1\">1:52 PM</small>\n            </div>\n            <div class=\"text-truncate font-weight-bold\">Lorem ipsum dolor sit amet</div>\n            <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n              incididunt...</small>\n          </div>\n        </div>\n      </tab>\n      <tab>\n        <ng-template tabHeading><i class=\"icon-settings\"></i></ng-template>\n        <div class=\"p-3\">\n          <h6>Settings</h6>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-4\">\n              <small><b>Option 1</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\" checked>\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n                incididunt ut labore et dolore magna aliqua.</small>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 2</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\">\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n            <div>\n              <small class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n                incididunt ut labore et dolore magna aliqua.</small>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 3</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\">\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n                <span class=\"switch-handle\"></span>\n              </label>\n            </div>\n          </div>\n          <div class=\"aside-options\">\n            <div class=\"clearfix mt-3\">\n              <small><b>Option 4</b></small>\n              <label class=\"switch switch-label switch-pill switch-success switch-sm float-right\">\n                <input type=\"checkbox\" class=\"switch-input\" checked>\n                <span class=\"switch-slider\" data-checked=\"On\" data-unchecked=\"Off\"></span>\n              </label>\n            </div>\n          </div>\n          <hr>\n          <h6>System Utilization</h6>\n          <div class=\"text-uppercase mb-1 mt-4\"><small><b>CPU Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">348 Processes. 1/4 Cores.</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>Memory Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 70%\" aria-valuenow=\"70\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">11444GB/16384MB</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>SSD 1 Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 95%\" aria-valuenow=\"95\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">243GB/256GB</small>\n          <div class=\"text-uppercase mb-1 mt-2\"><small><b>SSD 2 Usage</b></small></div>\n          <div class=\"progress progress-xs\">\n            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 10%\" aria-valuenow=\"10\" aria-valuemin=\"0\"\n              aria-valuemax=\"100\"></div>\n          </div>\n          <small class=\"text-muted\">25GB/256GB</small>\n        </div>\n      </tab>\n    </tabset>\n  </app-aside>\n</div>\n<app-footer>\n  <span><a href=\"https://mlipia.herokuap.com\">Mlipia</a> &copy; 2018 Toutici Systems Ltd.</span>\n  <span class=\"ml-auto\">Designed and Created by <a href=\"https://davejoem.herokuapp.com\">Dave Joe M</a></span>\n</app-footer>"
 
 /***/ }),
 
@@ -1008,94 +886,7 @@ var DefaultLayoutComponent = /** @class */ (function () {
         this.user = user;
         this.sidebarMinimized = true;
         this.element = document.body;
-        this.accessors = ['admin', 'manager', 'approver', 'agent'];
         this.navItems = [];
-        this.defaultNavItems = [
-            {
-                name: 'Quick Links',
-                title: true,
-                icon: 'icon-speedometer',
-                accessors: ['admin', 'manager', 'approver', 'agent']
-            },
-            {
-                name: 'Groups',
-                url: '/groups',
-                icon: 'icon-people',
-                accessors: ['admin']
-            },
-            {
-                name: 'Users',
-                url: '/users',
-                icon: 'icon-people',
-                accessors: ['admin'],
-                children: [
-                    {
-                        name: 'All',
-                        url: '/users/all',
-                        icon: 'icon-list'
-                    },
-                    {
-                        name: 'Administrators',
-                        url: '/users/administrators',
-                        icon: 'icon-puzzle'
-                    },
-                    {
-                        name: 'Managers',
-                        url: '/users/managers',
-                        icon: 'icon-puzzle'
-                    },
-                    {
-                        name: 'Approvers',
-                        url: '/users/approvers',
-                        icon: 'icon-puzzle'
-                    },
-                    {
-                        name: 'Agents',
-                        url: '/users/agents',
-                        icon: 'icon-puzzle'
-                    }
-                ]
-            },
-            {
-                name: 'Accounts',
-                url: '/accounts',
-                icon: 'icon-speedometer',
-                badge: {
-                    variant: 'info',
-                    text: '3'
-                },
-                accessors: ['admin', 'manager']
-            },
-            {
-                name: 'Transactions',
-                url: '/transactions',
-                icon: 'icon-pie-chart',
-                accessors: ['admin', 'manager', 'approver'],
-                children: [
-                    {
-                        name: 'All',
-                        url: '/transactions/all',
-                        icon: 'icon-list'
-                    },
-                    {
-                        name: 'Successful',
-                        url: '/transactions/successful',
-                        icon: 'icon-list'
-                    },
-                    {
-                        name: 'Failed',
-                        url: '/transactions/failed',
-                        icon: 'icon-list'
-                    }
-                ]
-            },
-            {
-                name: 'Clients',
-                url: '/clients',
-                icon: 'icon-pie-chart',
-                accessors: ['admin', 'manager', 'approver', 'agent']
-            }
-        ];
         this.changes = new MutationObserver(function (mutations) {
             _this.sidebarMinimized = true || document.body.classList.contains('sidebar-minimized');
         });
@@ -1108,119 +899,7 @@ var DefaultLayoutComponent = /** @class */ (function () {
         // this.autoFilterNavItems()
     };
     DefaultLayoutComponent.prototype.loadShortCuts = function () {
-        switch (this.user._user.role) {
-            case "admin":
-                this.registerAdminShortcuts();
-                break;
-            case "manager":
-                this.registerManagerShortcuts();
-                break;
-            case "approver":
-                this.registerApproverShortcuts();
-                break;
-            case "agent":
-                this.registerAgentShortcuts();
-                break;
-        }
-    };
-    DefaultLayoutComponent.prototype.signout = function () {
-        this.user.signOut();
-        this.router.navigateByUrl('/signin');
-    };
-    DefaultLayoutComponent.prototype.registerAdminShortcuts = function () {
-        var navs = this.defaultNavItems;
-        navs.forEach(function (navItem) {
-            if (navItem.url)
-                navItem.url = "/home/admin" + navItem.url;
-            if (navItem.children && navItem.children.length)
-                navItem.children.forEach(function (child) {
-                    if (child.url)
-                        child.url = "/home/admin" + child.url;
-                });
-            delete navItem.accessors;
-        });
-        this.navItems = navs;
-    };
-    DefaultLayoutComponent.prototype.registerManagerShortcuts = function () {
-        var navs = this.defaultNavItems;
-        navs.forEach(function (navItem, index) {
-            if ('manager' in navItem.accessors) {
-                if (navItem.url)
-                    navItem.url = "/home/manager" + navItem.url;
-                if (navItem.children && navItem.children.length)
-                    navItem.children.forEach(function (child) {
-                        if (child.url)
-                            child.url = "/home/manager" + child.url;
-                    });
-                delete navItem.accessors;
-            }
-            else {
-                navs.splice(index, 1);
-            }
-        });
-        this.navItems = navs;
-    };
-    DefaultLayoutComponent.prototype.registerApproverShortcuts = function () {
-        var navs = this.defaultNavItems;
-        navs.forEach(function (navItem, index) {
-            if ('approver' in navItem.accessors) {
-                if (navItem.url)
-                    navItem.url = "/home/approver" + navItem.url;
-                if (navItem.children && navItem.children.length)
-                    navItem.children.forEach(function (child) {
-                        if (child.url)
-                            child.url = "/home/approver" + child.url;
-                    });
-                delete navItem.accessors;
-            }
-            else {
-                navs.splice(index, 1);
-            }
-        });
-        this.navItems = navs;
-    };
-    DefaultLayoutComponent.prototype.registerAgentShortcuts = function () {
-        var navs = this.defaultNavItems;
-        navs.forEach(function (navItem, index) {
-            if ('agent' in navItem.accessors) {
-                if (navItem.url)
-                    navItem.url = "/home/agent" + navItem.url;
-                if (navItem.children && navItem.children.length)
-                    navItem.children.forEach(function (child) {
-                        if (child.url)
-                            child.url = "/home/agent" + child.url;
-                    });
-                delete navItem.accessors;
-            }
-            else {
-                navs.splice(index, 1);
-            }
-        });
-        this.navItems = navs;
-    };
-    DefaultLayoutComponent.prototype.autoFilterNavItems = function () {
-        var navs = this.defaultNavItems;
-        this.accessors.forEach(function (accessor) {
-            // console.log('checking', accessor)
-            navs.forEach(function (navItem, index) {
-                // console.log(`${accessor} in ${navItem.accessors.toString()}: `, accessor in navItem.accessors)
-                if (accessor in navItem.accessors) {
-                    if (navItem.url)
-                        navItem.url = "/home/" + accessor + "/" + navItem.url;
-                    if (navItem.children && navItem.children.length)
-                        navItem.children.forEach(function (child) {
-                            if (child.url)
-                                child.url = "/home/" + accessor + "/" + child.url;
-                        });
-                    delete navItem.accessors;
-                }
-                else {
-                    navs.splice(index, 1);
-                }
-            });
-        });
-        this.navItems = navs;
-        console.log('auto-sorted', this.navItems);
+        this.navItems = this.user.createShortcuts();
     };
     DefaultLayoutComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1377,10 +1056,11 @@ var Storage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage.service */ "./src/app/storage.service.ts");
-/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.service */ "./src/app/api.service.ts");
-/* harmony import */ var _models_models__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./models/models */ "./src/app/models/models.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./storage.service */ "./src/app/storage.service.ts");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./api.service */ "./src/app/api.service.ts");
+/* harmony import */ var _models_models__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./models/models */ "./src/app/models/models.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1390,6 +1070,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1415,14 +1096,113 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
  * If the `status` field is not `success`, then an error is detected and returned.
  */
 var User = /** @class */ (function () {
-    function User(api, router, storage) {
+    function User(api, http, router, storage) {
         this.api = api;
+        this.http = http;
         this.router = router;
         this.storage = storage;
         this.USER_KEY = 'user';
         this.USER_TOKEN = 'token';
         this.redirectPath = '';
         this._user = this.load();
+        this.accessors = ['admin', 'manager', 'approver', 'agent'];
+        this.navItems = [];
+        this.defaultNavItems = [
+            {
+                name: 'Quick Links',
+                title: true,
+                icon: 'icon-speedometer',
+                accessors: ['admin', 'manager', 'approver', 'agent']
+            },
+            {
+                name: 'Groups',
+                url: '/groups',
+                icon: 'icon-people',
+                accessors: ['admin']
+            },
+            {
+                name: 'Users',
+                url: '/users',
+                icon: 'icon-people',
+                accessors: ['admin'],
+                children: [
+                    {
+                        name: 'All',
+                        url: '/users/all',
+                        icon: 'icon-list'
+                    },
+                    {
+                        name: 'Administrators',
+                        url: '/users/administrators',
+                        icon: 'icon-puzzle'
+                    },
+                    {
+                        name: 'Managers',
+                        url: '/users/managers',
+                        icon: 'icon-puzzle'
+                    },
+                    {
+                        name: 'Approvers',
+                        url: '/users/approvers',
+                        icon: 'icon-puzzle'
+                    },
+                    {
+                        name: 'Agents',
+                        url: '/users/agents',
+                        icon: 'icon-puzzle'
+                    }
+                ]
+            },
+            {
+                name: 'Accounts',
+                url: '/accounts',
+                icon: 'icon-speedometer',
+                badge: {
+                    variant: 'info',
+                    text: '3'
+                },
+                accessors: ['admin', 'manager']
+            },
+            {
+                name: 'Lenders',
+                url: '/lenders',
+                icon: 'icon-speedometer',
+                badge: {
+                    variant: 'info',
+                    text: '3'
+                },
+                accessors: ['admin', 'manager']
+            },
+            {
+                name: 'Transactions',
+                url: '/transactions',
+                icon: 'icon-pie-chart',
+                accessors: ['admin', 'manager', 'approver'],
+                children: [
+                    {
+                        name: 'All',
+                        url: '/transactions/all',
+                        icon: 'icon-list'
+                    },
+                    {
+                        name: 'Successful',
+                        url: '/transactions/successful',
+                        icon: 'icon-list'
+                    },
+                    {
+                        name: 'Failed',
+                        url: '/transactions/failed',
+                        icon: 'icon-list'
+                    }
+                ]
+            },
+            {
+                name: 'Clients',
+                url: '/clients',
+                icon: 'icon-pie-chart',
+                accessors: ['admin', 'manager', 'approver', 'agent']
+            }
+        ];
     }
     User.prototype.canActivate = function (route, state) {
         var _this = this;
@@ -1491,7 +1271,7 @@ var User = /** @class */ (function () {
      * the user entered on the form.
      */
     User.prototype.signIn = function (details) {
-        return this.api.send(new _models_models__WEBPACK_IMPORTED_MODULE_4__["HybridMessage"]('/auth/signin', 'auth:signin', 'post', details));
+        return this.api.send(new _models_models__WEBPACK_IMPORTED_MODULE_5__["HybridMessage"]('/auth/signin', 'auth:signin', 'post', details));
     };
     /**
      * Sign the user out, which forgets the session
@@ -1511,483 +1291,168 @@ var User = /** @class */ (function () {
     User.prototype.save = function (user) {
         return this.storage.set(this.USER_KEY, user ? user : this._user);
     };
+    User.prototype.createShortcuts = function () {
+        switch (this._user.role) {
+            case "admin":
+                this.registerAdminShortcuts();
+                break;
+            case "manager":
+                this.registerManagerShortcuts();
+                break;
+            case "approver":
+                this.registerApproverShortcuts();
+                break;
+            case "agent":
+                this.registerAgentShortcuts();
+                break;
+        }
+        return this.navItems;
+    };
+    User.prototype.registerAdminShortcuts = function () {
+        var _this = this;
+        var navs = this.defaultNavItems;
+        navs.forEach(function (navItem) {
+            if (navItem.url) {
+                var path = navItem.name;
+                _this.countBadge(path.toLowerCase(), function (count) {
+                    if (count != null && count > 0)
+                        navItem.badge = { variant: 'info', text: count };
+                    else
+                        delete navItem.badge;
+                });
+                navItem.url = "/home/admin" + navItem.url;
+            }
+            if (navItem.children && navItem.children.length)
+                navItem.children.forEach(function (child) {
+                    if (child.url)
+                        child.url = "/home/admin" + child.url;
+                });
+            delete navItem.accessors;
+        });
+        this.navItems = navs;
+    };
+    User.prototype.registerManagerShortcuts = function () {
+        var _this = this;
+        this.defaultNavItems.forEach(function (navItem, index) {
+            console.log(navItem, navItem.accessors.indexOf('manager') >= 0);
+            if (navItem.accessors.indexOf('manager') >= 0) {
+                if (navItem.url) {
+                    var path = navItem.name;
+                    _this.countBadge(path.toLowerCase(), function (count) {
+                        if (count != null && count > 0)
+                            navItem.badge = { variant: 'info', text: count };
+                        else
+                            delete navItem.badge;
+                    });
+                    navItem.url = "/home/manager" + navItem.url;
+                }
+                if (navItem.children && navItem.children.length)
+                    navItem.children.forEach(function (child) {
+                        if (child.url)
+                            child.url = "/home/manager" + child.url;
+                    });
+                delete navItem.accessors;
+                _this.navItems.push(navItem);
+            }
+        });
+    };
+    User.prototype.registerApproverShortcuts = function () {
+        var _this = this;
+        this.defaultNavItems.forEach(function (navItem, index) {
+            if (navItem.accessors.indexOf('approver') >= 0) {
+                if (navItem.url) {
+                    var path = navItem.name;
+                    _this.countBadge(path.toLowerCase(), function (count) {
+                        if (count != null && count > 0)
+                            navItem.badge = { variant: 'info', text: count };
+                        else
+                            delete navItem.badge;
+                    });
+                    navItem.url = "/home/approver" + navItem.url;
+                }
+                if (navItem.children && navItem.children.length)
+                    navItem.children.forEach(function (child) {
+                        if (child.url)
+                            child.url = "/home/approver" + child.url;
+                    });
+                delete navItem.accessors;
+                _this.navItems.push(navItem);
+            }
+        });
+    };
+    User.prototype.registerAgentShortcuts = function () {
+        var _this = this;
+        this.defaultNavItems.forEach(function (navItem, index) {
+            if (navItem.accessors.indexOf('agent') >= 0) {
+                if (navItem.url) {
+                    var path = navItem.name;
+                    _this.countBadge(path.toLowerCase(), function (count) {
+                        if (count != null && count > 0)
+                            navItem.badge = { variant: 'info', text: count };
+                        else
+                            delete navItem.badge;
+                    });
+                    navItem.url = "/home/agent" + navItem.url;
+                }
+                if (navItem.children && navItem.children.length)
+                    navItem.children.forEach(function (child) {
+                        if (child.url)
+                            child.url = "/home/agent" + child.url;
+                    });
+                delete navItem.accessors;
+                _this.navItems.push(navItem);
+            }
+        });
+    };
+    User.prototype.autoFilterNavItems = function () {
+        var _this = this;
+        this.accessors.forEach(function (accessor) {
+            // console.log('checking', accessor)
+            _this.defaultNavItems.forEach(function (navItem, index) {
+                // console.log(`${accessor} in ${navItem.accessors.toString()}: `, accessor in navItem.accessors)
+                if (navItem.accessors.indexOf(accessor) >= 0) {
+                    if (navItem.url) {
+                        var path = navItem.name;
+                        _this.countBadge(path.toLowerCase(), function (count) {
+                            navItem.badge = {
+                                variant: 'info',
+                                text: count
+                            };
+                        });
+                        navItem.url = "/home/" + accessor + "/" + navItem.url;
+                    }
+                    if (navItem.children && navItem.children.length)
+                        navItem.children.forEach(function (child) {
+                            if (child.url)
+                                child.url = "/home/" + accessor + "/" + child.url;
+                        });
+                    delete navItem.accessors;
+                    _this.navItems.push(navItem);
+                }
+            });
+        });
+    };
+    User.prototype.countBadge = function (type, cb) {
+        // this.api.send(new HybridMessage(`/${type}/list`, `${type}:list`, ``)).subscribe((res: any[]) => {
+        //   cb(res.length)
+        // })
+        this.http.get(this.api.url + "/" + type + "/list")
+            .map(function (res) { return res.json(); }).subscribe(function (res) {
+            cb(res.length);
+        }, function (err) {
+            cb(0);
+        });
+    };
     User = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_3__["Api"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _storage_service__WEBPACK_IMPORTED_MODULE_2__["Storage"]])
+        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_4__["Api"],
+            _angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _storage_service__WEBPACK_IMPORTED_MODULE_3__["Storage"]])
     ], User);
     return User;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/accounts.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/views/admin/accounts.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/accounts.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/views/admin/accounts.component.ts ***!
-  \***************************************************/
-/*! exports provided: AccountsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountsComponent", function() { return AccountsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AccountsComponent = /** @class */ (function () {
-    function AccountsComponent() {
-    }
-    AccountsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./accounts.component.html */ "./src/app/views/admin/accounts.component.html")
-        }),
-        __metadata("design:paramtypes", [])
-    ], AccountsComponent);
-    return AccountsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/admin.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/views/admin/admin.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>Welcome to admin</div>"
-
-/***/ }),
-
-/***/ "./src/app/views/admin/admin.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/views/admin/admin.component.ts ***!
-  \************************************************/
-/*! exports provided: AdminComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var AdminComponent = /** @class */ (function () {
-    function AdminComponent() {
-    }
-    // events
-    AdminComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    AdminComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
-    AdminComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./admin.component.html */ "./src/app/views/admin/admin.component.html")
-        })
-    ], AdminComponent);
-    return AdminComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/clients.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/views/admin/clients.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/clients.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/views/admin/clients.component.ts ***!
-  \**************************************************/
-/*! exports provided: ClientsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientsComponent", function() { return ClientsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ClientsComponent = /** @class */ (function () {
-    function ClientsComponent() {
-    }
-    ClientsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./clients.component.html */ "./src/app/views/admin/clients.component.html")
-        }),
-        __metadata("design:paramtypes", [])
-    ], ClientsComponent);
-    return ClientsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/groups.component.html":
-/*!***************************************************!*\
-  !*** ./src/app/views/admin/groups.component.html ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/groups.component.ts":
-/*!*************************************************!*\
-  !*** ./src/app/views/admin/groups.component.ts ***!
-  \*************************************************/
-/*! exports provided: GroupsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupsComponent", function() { return GroupsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var GroupsComponent = /** @class */ (function () {
-    function GroupsComponent() {
-    }
-    GroupsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./groups.component.html */ "./src/app/views/admin/groups.component.html")
-        }),
-        __metadata("design:paramtypes", [])
-    ], GroupsComponent);
-    return GroupsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/lenders.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/views/admin/lenders.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/lenders.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/views/admin/lenders.component.ts ***!
-  \**************************************************/
-/*! exports provided: LendersComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LendersComponent", function() { return LendersComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var LendersComponent = /** @class */ (function () {
-    function LendersComponent() {
-    }
-    LendersComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./lenders.component.html */ "./src/app/views/admin/lenders.component.html")
-        }),
-        __metadata("design:paramtypes", [])
-    ], LendersComponent);
-    return LendersComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/transactions.component.html":
-/*!*********************************************************!*\
-  !*** ./src/app/views/admin/transactions.component.html ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/transactions.component.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/views/admin/transactions.component.ts ***!
-  \*******************************************************/
-/*! exports provided: TransactionsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionsComponent", function() { return TransactionsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api.service */ "./src/app/api.service.ts");
-/* harmony import */ var _models_models__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../models/models */ "./src/app/models/models.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var TransactionsComponent = /** @class */ (function () {
-    function TransactionsComponent(api, router, route) {
-        this.api = api;
-        this.router = router;
-        this.route = route;
-        this.selected = 'all';
-        this.transactions = [];
-    }
-    TransactionsComponent.prototype.ngOnInit = function () {
-        this.getTransactions();
-    };
-    TransactionsComponent.prototype.getTransactions = function () {
-        var _this = this;
-        this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (params) {
-            return _this.api.send(new _models_models__WEBPACK_IMPORTED_MODULE_4__["HybridMessage"]('/transactions/list', 'transactions:list', 'post', { select: _this.selected ? _this.selected : params.get('select') }));
-        })).subscribe(function (transactions) {
-            _this.transactions = transactions;
-            console.log(transactions);
-        });
-    };
-    TransactionsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./transactions.component.html */ "./src/app/views/admin/transactions.component.html")
-        }),
-        __metadata("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_3__["Api"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
-    ], TransactionsComponent);
-    return TransactionsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/admin/users.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/views/admin/users.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/views/admin/users.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/views/admin/users.component.ts ***!
-  \************************************************/
-/*! exports provided: UsersComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersComponent", function() { return UsersComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var UsersComponent = /** @class */ (function () {
-    function UsersComponent() {
-    }
-    UsersComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./users.component.html */ "./src/app/views/admin/users.component.html")
-        }),
-        __metadata("design:paramtypes", [])
-    ], UsersComponent);
-    return UsersComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/agent/agent.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/views/agent/agent.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>Welcome to admin</div>"
-
-/***/ }),
-
-/***/ "./src/app/views/agent/agent.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/views/agent/agent.component.ts ***!
-  \************************************************/
-/*! exports provided: AgentComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgentComponent", function() { return AgentComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var AgentComponent = /** @class */ (function () {
-    function AgentComponent() {
-    }
-    // events
-    AgentComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    AgentComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
-    AgentComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./agent.component.html */ "./src/app/views/agent/agent.component.html")
-        })
-    ], AgentComponent);
-    return AgentComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/approver/approver.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/views/approver/approver.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>Welcome to admin</div>"
-
-/***/ }),
-
-/***/ "./src/app/views/approver/approver.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/views/approver/approver.component.ts ***!
-  \******************************************************/
-/*! exports provided: ApproverComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApproverComponent", function() { return ApproverComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var ApproverComponent = /** @class */ (function () {
-    function ApproverComponent() {
-    }
-    // events
-    ApproverComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    ApproverComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
-    ApproverComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./approver.component.html */ "./src/app/views/approver/approver.component.html")
-        })
-    ], ApproverComponent);
-    return ApproverComponent;
 }());
 
 
@@ -2084,57 +1549,6 @@ var P500Component = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], P500Component);
     return P500Component;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/manager/manager.component.html":
-/*!******************************************************!*\
-  !*** ./src/app/views/manager/manager.component.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>Welcome to admin</div>"
-
-/***/ }),
-
-/***/ "./src/app/views/manager/manager.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/views/manager/manager.component.ts ***!
-  \****************************************************/
-/*! exports provided: ManagerComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerComponent", function() { return ManagerComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var ManagerComponent = /** @class */ (function () {
-    function ManagerComponent() {
-    }
-    // events
-    ManagerComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    ManagerComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
-    ManagerComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: __webpack_require__(/*! ./manager.component.html */ "./src/app/views/manager/manager.component.html")
-        })
-    ], ManagerComponent);
-    return ManagerComponent;
 }());
 
 

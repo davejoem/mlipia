@@ -1,0 +1,11 @@
+<div class="floatLeft clickable animated fadeIn col-sm-6 col-lg-3" *ngFor="let transaction of transactions">
+  <div class="card text-white bg-primary">
+    <div class="card-body pb-0">
+      <div class="text-value">Account: {{ transaction.account.name }}</div>
+      <div>Client: {{ transaction.client.name }} </div>
+      <div>Amount: {{ transaction.amount }}</div>
+      <div>Succeeded: {{ transaction.success ? 'Yes' : 'No' }}</div>
+      <div>Date: {{ transaction.date}}</div>
+    </div>
+  </div>
+</div>

@@ -41,7 +41,21 @@ export class AuthRoutes implements Route {
   }
 
   private signIn(req: Request, res: Response) {
-    res.status(200).send({ username: 'admin', role: 'approver' })
+    let ret: any
+    switch (req.body.username) {
+      case 'kelvin' || 'manager':
+        ret = { username: req.body.username, role: 'manager' }
+        break
+      case 'approver' || 'anthony':
+        ret = { username: req.body.username, role: 'approver' }
+        break
+      case 'agent':
+        ret = { username: req.body.username, role: 'agent' }
+        break
+      default:
+        ret = { username: req.body.username, role: 'admin' }
+    }
+    res.status(200).send(ret)
   }
 
   private getToken(req: Request, res: Response) {

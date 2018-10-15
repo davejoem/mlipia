@@ -418,7 +418,7 @@ var Api = /** @class */ (function () {
     function Api(http) {
         this.http = http;
         this.connectSocket();
-        this.url = "http://localhost:8000" || window.location.origin;
+        this.url = window.location.origin;
     }
     Api.prototype.connectSocket = function (domain) {
         var _this = this;

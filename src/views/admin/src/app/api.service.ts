@@ -19,7 +19,7 @@ export class Api {
   public auth_socket: Socket;
   constructor(public http: Http) {
     this.connectSocket()
-    this.url = "http://localhost:8000" || window.location.origin
+    this.url = window.location.origin
   }
 
   connectSocket(domain?: string): Observable<Socket> {

@@ -1,7 +1,7 @@
-# WIMS Server
+# Mlipia Server
 
 
-Server for *W*ard *I*nformation *M*anagement *S*ystem
+Server for the MLIPIA money platform. This is just a presentation mock up. And is a work in progress.
 
 
 ## Installation
